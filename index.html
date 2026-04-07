@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 /* ---------------- GLOBAL COLORS (LIGHT / DARK MODE) ---------------- */
 :root {
     --bg: #f5f7fa;
@@ -38,6 +39,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 18px 50px;
     background: var(--card);
     box-shadow: var(--shadow);
@@ -52,9 +54,7 @@ nav {
     color: var(--text);
     font-weight: 600;
 }
-.nav-links a:hover {
-    color: var(--accent);
-}
+.nav-links a:hover { color: var(--accent); }
 
 .theme-btn {
     padding: 8px 15px;
@@ -170,12 +170,14 @@ footer {
 <!-- ---------------- NAVBAR ---------------- -->
 <nav>
     <div class="logo"><strong style="color: var(--accent); font-size: 20px;">Venkareddy</strong></div>
+
     <div class="nav-links">
-        #home
-        #skills>Skills</a>
-        #projects>Projects</a>
-        #contact>Contact</a>
+        #homeHome</a>
+        #skillsSkills</a>
+        #projectsProjects</a>
+        #contactContact</a>
     </div>
+
     <button class="theme-btn" onclick="document.body.classList.toggle('dark')">
         Toggle Theme
     </button>
@@ -194,10 +196,10 @@ footer {
 <section class="section">
     <h2>Professional Summary</h2>
     <p>
-        I am a Data Analyst with experience in Power BI, SQL, Python, ETL pipelines, KPI automation, 
-        and manufacturing analytics. I build dashboards, forecasting tools, and automated data systems 
-        that convert raw data into clear insights for faster decision‑making. I enjoy solving business 
-        problems with clean, modern, analytics-driven solutions.
+        I am a Data Analyst with strong experience in Power BI, SQL, Python, ETL automation, 
+        forecasting, anomaly detection and operational KPI reporting. I build dashboards, 
+        automated data pipelines, and analytical models that convert complex datasets into 
+        clear, decision-ready insights for business and manufacturing leadership.
     </p>
 </section>
 
@@ -224,23 +226,54 @@ footer {
 <section class="section" id="projects">
     <h2>Projects</h2>
 
+    <!-- ✅ PROJECT 1 -->
     <div class="project-card">
-        <h3>📊 Plant-Level KPI Dashboard</h3>
+        <h3>📊 Plant-Level KPI Dashboard (Manufacturing Operations)</h3>
         <p>
-            A centralized Power BI dashboard tracking plant KPIs across Safety, Quality, SCM, 
-            Maintenance, and Production. Integrated IoT machine data, SharePoint, Excel, SQL 
-            and automated refresh using Power BI Gateway. Designed star schema model with 
-            advanced DAX for real-time insights in Tier‑3 meetings.
+            In manufacturing operations, Safety, Quality, SCM, Maintenance and Production departments 
+            track KPIs separately, causing fragmented data, manual workload and delays before Tier‑3 meetings.  
+            I built a centralized, automated Power BI dashboard integrating IoT data, SharePoint lists, Excel, 
+            and SQL sources to give leadership a real‑time single source of truth.
+        </p>
+        <p>
+            ✅ Developed star-schema model (Fact Production, Fact Machine, Dim Date, Dim Department, Dim Machine)  
+            ✅ Automated ETL using Power Query (cleaning, merging, validation rules)  
+            ✅ Created 50+ DAX measures (trends, targets, variance, incident rate, machine efficiency)  
+            ✅ Integrated IoT machine data for downtime, OEE, rejection and runtime  
+            ✅ Automated refresh using Power BI Gateway  
+            ✅ Designed operational visuals: machine downtime waterfall, quality matrix, safety compliance, SCM trends
+        </p>
+        <p>
+            <strong>Business Impact:</strong>  
+            ✅ Reduced manual reporting from 2 hours to 10 seconds  
+            ✅ Improved decision-making speed for Plant Head  
+            ✅ Provided real‑time KPI visibility across all departments  
+            ✅ Eliminated data mismatch and inconsistency issues  
         </p>
         <p class="coming">📸 Screenshot Coming Soon</p>
     </div>
 
+    <!-- ✅ PROJECT 2 -->
     <div class="project-card">
-        <h3>📈 Amazon Sales Dashboard</h3>
+        <h3>📈 Amazon Sales Performance Dashboard (E‑commerce)</h3>
         <p>
-            Interactive Power BI dashboard analyzing sales performance by city, category, state, 
-            and fulfillment type. Includes KPIs: Total Sales, Orders, AOV, Top‑Performing Cities, 
-            Order Status Breakdown, and Amazon vs Merchant Insights.
+            Built a comprehensive Power BI dashboard analyzing sales, orders, returns and category performance 
+            across major Indian cities and states. The dashboard transforms raw CSV data into clean insights 
+            for business decisions and sales optimization.
+        </p>
+        <p>
+            ✅ KPIs: Total Sales, Orders, Quantity, AOV  
+            ✅ City-wise and State-wise sales distribution  
+            ✅ Category performance analysis with contribution %  
+            ✅ Order status metrics (Shipped, Returned, Cancelled)  
+            ✅ Amazon vs Merchant fulfillment comparison  
+            ✅ Trend and seasonality insights (Daily/Weekly/Monthly)
+        </p>
+        <p>
+            <strong>Key Insights:</strong>  
+            • Bengaluru, Hyderabad, Mumbai = top performing cities  
+            • Amazon-fulfilled orders generate higher revenue  
+            • Returns concentrated in a few categories and regions  
         </p>
         <p class="coming">📸 Screenshot Coming Soon</p>
     </div>
