@@ -3,101 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <title>Annem Venkareddy | Data Analyst Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <style>
+        /* ----------------------- GLOBAL STYLES ------------------------ */
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            margin: 0;
-            background: #fafafa;
-            color: #222;
+            background: var(--bg);
+            color: var(--text);
+            transition: 0.3s ease-in-out;
         }
+
+        :root {
+            --bg: #ffffff;
+            --text: #1b1b1b;
+            --card: #ffffff;
+            --accent: #0a3d62;
+            --subtle: #f7f2ea;
+        }
+
+        body.dark {
+            --bg: #0d1117;
+            --text: #e6e6e6;
+            --card: #161b22;
+            --accent: #58a6ff;
+            --subtle: #2d2d2d;
+        }
+
+        /* ----------------------- NAVIGATION --------------------------- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card);
+            padding: 15px 40px;
+            border-bottom: 2px solid var(--subtle);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav-links a {
+            margin: 0 15px;
+            color: var(--text);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* ----------------------- HEADER ------------------------------- */
         header {
-            background: #ffffff;
-            padding: 40px;
             text-align: center;
-            border-bottom: 3px solid #e6e3dd;
+            padding: 50px 20px;
         }
+
+        header img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
         header h1 {
-            margin: 0;
-            font-size: 36px;
-            color: #0a3d62;
+            font-size: 38px;
+            margin-bottom: 5px;
+            color: var(--accent);
         }
-        header h2 {
-            margin-top: 8px;
-            color: #3c6382;
+
+        header h3 {
             font-weight: 400;
+            color: var(--text);
         }
+
+        /* ----------------------- SECTIONS ----------------------------- */
         .section {
-            padding: 40px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
+            padding: 40px 20px;
         }
-        h2 {
-            color: #0a3d62;
-            border-left: 5px solid #bba27c;
-            padding-left: 10px;
+
+        .section h2 {
+            margin-bottom: 10px;
+            border-left: 5px solid var(--accent);
+            padding-left: 12px;
         }
+
+        /* ----------------------- SKILLS ------------------------------- */
         .skills span {
-            background: #0a3d62;
+            background: var(--accent);
             color: white;
             padding: 8px 14px;
             border-radius: 6px;
+            display: inline-block;
             margin: 5px;
-            display: inline-block;
+            font-size: 14px;
         }
-        .project {
-            background: white;
+
+        /* ----------------------- PROJECT CARDS ------------------------ */
+        .project-card {
+            background: var(--card);
             padding: 25px;
-            margin: 20px 0;
-            border-radius: 10px;
-            border-left: 6px solid #0a3d62;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--accent);
+            transition: transform 0.2s ease;
         }
-        .project h3 {
-            margin-top: 0;
-            color: #0a3d62;
+
+        .project-card:hover {
+            transform: translateY(-5px);
         }
+
         .coming-soon {
-            background: #f2e7d8;
-            padding: 10px;
-            display: inline-block;
+            background: var(--subtle);
+            padding: 8px;
             border-radius: 5px;
-            color: #7a5c2e;
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 13px;
+            color: var(--accent);
             font-weight: bold;
         }
+
+        /* ----------------------- FOOTER ------------------------------- */
         footer {
             text-align: center;
             padding: 20px;
-            background: #ffffff;
-            border-top: 3px solid #e6e3dd;
             margin-top: 50px;
+            background: var(--card);
+            color: var(--text);
+            border-top: 2px solid var(--subtle);
         }
-        a {
-            color: #0a3d62;
+
+        /* ----------------------- BUTTON ------------------------------- */
+        .resume-btn {
+            background: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 15px;
         }
+
+        .resume-btn:hover {
+            opacity: 0.8;
+        }
+
     </style>
 </head>
 
 <body>
 
-<header>
+<!-- ----------------------- NAVIGATION BAR --------------------------- -->
+<nav>
+    <div class="logo"><strong style="color: var(--accent);">Venkareddy</strong></div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+</nav>
+
+<!-- ----------------------- HEADER ----------------------------------- -->
+<header id="home">
+    <img src="yourphoto.jpg" alt="Your Photo">
     <h1>Annem Venkareddy</h1>
-    <h2>Data Analyst | Business Analyst | Power BI | SQL | Python</h2>
+    <h3>Data Analyst | Business Analyst | Power BI | SQL | Python</h3>
+
+    <a class="resume-btn" href="Resume.pdf" download>⬇ Download Resume</a>
 </header>
 
+<!-- ----------------------- SUMMARY ---------------------------------- -->
 <section class="section">
     <h2>Professional Summary</h2>
     <p>
-        I am a Data Analyst with strong experience in Power BI, SQL, Python, ETL automation, and data modeling. 
-        I specialize in building interactive dashboards, forecasting models, and automated KPI systems that support 
-        operational and business decision-making. With experience in handling multi-department manufacturing KPIs 
-        and e-commerce analytics, I convert complex data into clear insights for leadership. I enjoy simplifying 
-        data problems and delivering impactful, reliable analytics solutions.
+        I am a Data Analyst with strong experience in Power BI, SQL, Python, ETL automation, and data modeling.
+        I specialize in building interactive dashboards, forecasting models, and automated KPI systems that drive
+        meaningful decision-making. With experience in multi‑department manufacturing KPIs and e‑commerce analytics,
+        I convert complex data into clear, actionable insights that support leadership and business growth.
     </p>
 </section>
 
-<section class="section">
+<!-- ----------------------- SKILLS ------------------------------------ -->
+<section class="section" id="skills">
     <h2>Skills</h2>
     <div class="skills">
         <span>Power BI</span>
@@ -115,31 +221,30 @@
     </div>
 </section>
 
-<section class="section">
+<!-- ----------------------- PROJECTS --------------------------------- -->
+<section class="section" id="projects">
     <h2>Projects</h2>
 
     <!-- ✅ PROJECT 1 -->
-    <div class="project">
+    <div class="project-card">
         <h3>📊 Plant-Level KPI Dashboard (Manufacturing Operations)</h3>
         <p>
-            Developed a centralized Power BI dashboard to track KPIs for Safety, Quality, SCM, Maintenance, 
-            and Production, enabling Tier-3 leadership reviews with real-time KPI monitoring. Integrated IoT 
-            machine data, Excel, SharePoint sources and built a star-schema model with advanced DAX metrics 
-            (trends, variance, YoY, MTD). Automated refresh using Power BI Gateway, eliminating manual efforts 
-            and improving decision-making accuracy.
+            Built a centralized Power BI dashboard to track manufacturing KPIs across Safety, Quality,
+            SCM, Maintenance & Production departments. Integrated IoT machine data, Excel, SharePoint sources
+            and automated refresh via Power BI Gateway. Designed a star-schema model with advanced DAX to support
+            Tier‑3 leadership decision-making.
         </p>
         <p><strong>Tools:</strong> Power BI, SQL, DAX, Power Query, Excel, SharePoint, IoT Data</p>
         <p class="coming-soon">📸 Screenshot Coming Soon</p>
     </div>
 
     <!-- ✅ PROJECT 2 -->
-    <div class="project">
-        <h3>📈 Amazon Sales Dashboard (E-commerce Analytics)</h3>
+    <div class="project-card">
+        <h3>📈 Amazon Sales Dashboard (E‑Commerce Analytics)</h3>
         <p>
-            Built an interactive Power BI dashboard analyzing sales performance across cities, categories, 
-            states and fulfillment types. Included KPIs like Total Sales, Orders, Quantity, AOV, and Top 10 cities. 
-            Visualized category trends, order status distribution (Shipped/Returned/Cancelled), and Amazon vs 
-            Merchant fulfillment insights.
+            Developed an interactive Power BI dashboard analyzing sales trends across cities, categories,
+            states & fulfillment types. Included KPIs: Total Sales, Orders, Quantity, AOV, Top 10 cities,
+            and Amazon vs Merchant fulfillment insights.
         </p>
         <p><strong>Tools:</strong> Power BI, DAX, Excel/CSV</p>
         <p class="coming-soon">📸 Screenshot Coming Soon</p>
@@ -147,16 +252,24 @@
 
 </section>
 
-<section class="section">
+<!-- ----------------------- CONTACT ---------------------------------- -->
+<section class="section" id="contact">
     <h2>Contact</h2>
     <p><strong>Phone:</strong> 6305049638</p>
-    <p><strong>Email:</strong> <a href="mailto:venkareddyannem@gmail.com">venkareddyannem@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/venkareddy-annem-59552524b/" target="_blank">Click Here</a></p>
+    <p><strong>Email:</strong> venkareddyannem@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/venkareddy-annem-59552524b/">Click Here</a></p>
 </section>
 
+<!-- ----------------------- FOOTER ----------------------------------- -->
 <footer>
     © 2026 | Designed by Annem Venkareddy
 </footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
