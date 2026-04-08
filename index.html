@@ -1,5 +1,3 @@
-<!-- force rebuild -->
-``
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-/* ---------- BASE ---------- */
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
@@ -16,95 +13,79 @@ body{
   color:#1f2937;
   scroll-behavior:smooth;
 }
-a{text-decoration:none}
 
-/* ---------- NAV ---------- */
+/* NAV */
 nav{
   position:sticky; top:0; z-index:100;
-  background:white;
+  background:#fff;
   padding:12px 40px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
-nav .links a{
+nav a{
   margin:0 14px;
+  text-decoration:none;
   font-weight:600;
   color:#1f2937;
 }
-nav .links a:hover{color:#2563eb}
+nav a:hover{color:#2563eb}
 
-/* ---------- HERO ---------- */
+/* HERO */
 header{
   background:linear-gradient(135deg,#2563eb,#60a5fa);
-  color:white;
+  color:#fff;
   text-align:center;
   padding:40px 20px;
 }
 header img{
-  width:120px;height:120px;
+  width:120px; height:120px;
   border-radius:50%;
-  border:3px solid white;
+  border:3px solid #fff;
   object-fit:cover;
 }
 .resume-btn{
   display:inline-block;
   margin-top:14px;
-  background:black;
-  color:white;
+  background:#000;
+  color:#fff;
   padding:10px 20px;
   border-radius:6px;
   font-weight:600;
+  text-decoration:none;
 }
 
-/* ---------- SECTIONS ---------- */
+/* SECTIONS */
 .section{
   max-width:1100px;
   margin:auto;
   padding:55px 20px;
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.8s ease;
-}
-.section.show{
-  opacity:1;
-  transform:none;
 }
 .section h2{
   border-left:5px solid #2563eb;
   padding-left:12px;
-  margin-bottom:20px;
 }
 
-/* ---------- CARDS ---------- */
+/* CARDS */
 .card{
-  background:white;
-  padding:28px;
+  background:#fff;
+  padding:26px;
   border-radius:14px;
   margin-bottom:28px;
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
-.card h3{margin-top:0}
 
-/* ---------- SKILLS ---------- */
-.skill-group h4{margin:16px 0 6px}
-.skill-group p{
-  background:white;
-  padding:14px;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.06);
-}
-
-/* ---------- CTA ---------- */
+/* CTA */
 .cta{
   position:fixed;
   right:22px; bottom:22px;
   background:#2563eb;
-  color:white;
+  color:#fff;
   padding:14px 20px;
   border-radius:30px;
   font-weight:700;
+  text-decoration:none;
   box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 </style>
@@ -112,181 +93,103 @@ header img{
 
 <body>
 
-<!-- NAV -->
 <nav>
   <strong style="color:#2563eb">Annem Venkareddy</strong>
-  <div class="links">
-    About
-    Skills
-    Projects
-    Experience
-    Contact
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <header id="about">
-  yourphoto.jpg
+  <img src="yourphoto.jpg" alt="Profile photo">
   <h1>Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
-  Resume.pdfDownload Resume</a>
+  <a class="resume-btn" href="Resume.pdf" target="_blank">Download Resume</a>
 </header>
 
-<!-- SUMMARY -->
 <section class="section">
 <h2>Professional Summary</h2>
 <p>
-Detail‑oriented Data Analyst with hands‑on experience building end‑to‑end Power BI solutions for manufacturing
-and business operations. Proven ability to design centralized KPI dashboards covering Safety, Energy, Quality,
-Production, Maintenance, SCM, and Procurement to enable leadership‑level decision‑making.
-Strong expertise in SQL‑based data preparation, Power Query ETL automation, star‑schema modeling, and DAX‑driven
-analytics with automated refresh using Power BI Gateway. Experienced in collaborating with department heads
-and cross‑functional teams to translate business metrics into actionable insights.
+Data Analyst with hands-on experience building end-to-end Power BI solutions for manufacturing operations.
+Designed centralized KPI dashboards covering Safety, Energy, Quality, Production, Maintenance, SCM, and Procurement,
+used daily by department heads for performance review and decision-making.
+Strong expertise in SQL-based data preparation, Power Query ETL automation, star-schema modeling,
+advanced DAX measures, and Power BI Gateway for automated refresh.
 </p>
 </section>
 
-<!-- SKILLS -->
 <section class="section" id="skills">
-<h2>Core Skills</h2>
+<h2>Skills</h2>
 
-<div class="skill-group">
-<h4>Analytics & BI</h4>
-<p>
-Power BI (Advanced DAX, KPI Frameworks, Dashboards), Trend & Variance Analysis,
-Root Cause Analysis, Performance Monitoring
-</p>
+<div class="card">
+<strong>Analytics & BI</strong><br>
+Power BI (DAX, KPI Design, Dashboards), Trend & Variance Analysis, Root Cause Analysis
+</div>
 
-<h4>Data Engineering & ETL</h4>
-<p>
-SQL (Joins, Aggregations, Cleaning, Validation),
-Power Query (ETL Automation),
-Star Schema Data Modeling,
-Power BI Gateway
-</p>
+<div class="card">
+<strong>Data Engineering & ETL</strong><br>
+SQL (joins, cleaning, aggregations), Power Query, Star Schema Modeling, Power BI Gateway
+</div>
 
-<h4>Business & Reporting</h4>
-<p>
-Operational KPI Design,
-Daily & Weekly Management Reviews,
-Business Metrics Analysis,
-Stakeholder Communication,
-Decision Support Analytics
-</p>
-
-<h4>Tools & Platforms</h4>
-<p>
-Power BI Service,
-Excel (Shared via SharePoint),
-SQL Server,
-CSV Data Sources
-</p>
+<div class="card">
+<strong>Business & Reporting</strong><br>
+Operational KPIs, Daily HOD Reviews, Stakeholder Communication, Decision Support
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="section" id="projects">
 <h2>Projects</h2>
 
 <div class="card">
-<h3>Plant‑Level KPI Dashboard (Manufacturing Operations)</h3>
-
-<p><strong>Objective:</strong><br>
-Create a single centralized dashboard to track and monitor all key manufacturing KPIs at plant level,
-used daily by HODs to review performance and take corrective actions.
+<h3>Plant-Level KPI Dashboard (Manufacturing)</h3>
+<p>
+Built a centralized Power BI dashboard integrating SharePoint-based Excel trackers and SQL-processed data to track
+Safety, Energy, Quality, Production, Maintenance, SCM, and Procurement KPIs.
+Used by HODs in daily meetings to identify low-performing metrics and take corrective action.
+Automated refresh using Power BI Gateway to eliminate manual reporting.
 </p>
-
-<p><strong>Scope & Metrics Covered:</strong></p>
-<ul>
-<li>Safety metrics & incidents</li>
-<li>Energy consumption & efficiency</li>
-<li>Quality metrics & defects</li>
-<li>Production output & efficiency KPIs</li>
-<li>Maintenance performance & downtime</li>
-<li>SCM & Procurement key indicators</li>
-</ul>
-
-<p><strong>Implementation:</strong></p>
-<ul>
-<li>Integrated Excel trackers shared via SharePoint, SQL‑processed datasets, and operational data sources</li>
-<li>Performed data cleaning, validation, and metric calculations using SQL and Power Query</li>
-<li>Designed star‑schema data model for performance & scalability</li>
-<li>Built interactive Power BI dashboards with drill‑downs and KPI comparisons</li>
-<li>Configured Power BI Gateway for automated refresh to eliminate manual intervention</li>
-</ul>
-
-<p><strong>Business Impact:</strong></p>
-<ul>
-<li>Enabled HOD‑level daily performance reviews</li>
-<li>Faster identification of low‑performing metrics</li>
-<li>Improved decision‑making speed and data accuracy</li>
-<li>Reduced manual reporting effort significantly</li>
-</ul>
 </div>
 
 <div class="card">
-<h3>Amazon Sales Dashboard (E‑Commerce Analytics)</h3>
-
+<h3>Amazon Sales Dashboard</h3>
 <p>
-Developed an interactive Power BI dashboard using Amazon sales CSV data to analyze sales performance
-and customer behavior.
-</p>
-
-<ul>
-<li>Total Sales, Orders, Quantity, Average Order Value</li>
-<li>City‑wise and state‑wise sales performance</li>
-<li>Product category analysis</li>
-<li>Order status tracking (Shipped, Returned, Cancelled)</li>
-<li>Amazon vs Merchant fulfillment comparison</li>
-</ul>
-
-<p>
-Prepared and cleaned data using SQL and Power BI, enabling clear trend analysis and business insights
-for sales performance optimization.
+Developed an analytical dashboard from Amazon sales CSV data using SQL and Power BI
+to analyze sales, order status, city-level performance, and fulfillment effectiveness.
 </p>
 </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section class="section" id="experience">
 <h2>Experience</h2>
 
 <div class="card">
-<h3>Business Analyst / Data Analyst — Aliaxis</h3>
-<p><em>Nov 2024 – Present</em></p>
+<h3>Business Analyst / Data Analyst – Aliaxis</h3>
 <ul>
-<li>Built and maintained plant‑level KPI dashboards using Power BI</li>
-<li>Integrated data from SharePoint‑based Excel trackers and SQL sources</li>
-<li>Automated ETL workflows using Power Query and Power BI Gateway</li>
-<li>Developed DAX measures for operational KPIs, trends, and variance analysis</li>
-<li>Supported daily and weekly leadership review meetings</li>
-<li>Reduced manual reporting and improved metric visibility</li>
+<li>Developed plant-level KPI dashboards using Power BI</li>
+<li>Prepared and cleaned data using SQL and Power Query</li>
+<li>Automated reporting via Power BI Gateway</li>
+<li>Supported HOD and leadership decision-making</li>
 </ul>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
 <h2>Contact</h2>
-<p><strong>Phone:</strong> 6305049638</p>
-<p><strong>Email:</strong> venkareddyannem@gmail.com</p>
-<p><strong>LinkedIn:</strong>
-  https://www.linkedin.com/in/venkareddy-annem-59552524b/
-    Open LinkedIn Profile
-  </a>
+<p>📞 6305049638</p>
+<p>📧 venkareddyannem@gmail.com</p>
+<p>
+💼 
+<a href="https://www.linkedin.com/in/venkareddy-annem-59552524b/" target="_blank">
+LinkedIn Profile
+</a>
 </p>
 </section>
 
-#contactHire Me</a>
-
-<script>
-const sections=document.querySelectorAll('.section');
-const obs=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-  if(e.isIntersecting)e.target.classList.add('show');
- });
-},{threshold:.15});
-sections.forEach(s=>obs.observe(s));
-</script>
+<a class="cta" href="#contact">Hire Me</a>
 
 </body>
 </html>
