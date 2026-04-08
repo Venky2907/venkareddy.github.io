@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Annem Venkareddy | Data Analyst</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Annem Venkareddy | Data Analyst Portfolio</title>
 
 <style>
+/* ---------- BASE ---------- */
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
@@ -13,57 +14,45 @@ body{
   color:#1f2937;
   scroll-behavior:smooth;
 }
+a{text-decoration:none}
 
-/* ---------- NAVBAR ---------- */
+/* ---------- NAV ---------- */
 nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#ffffff;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  position:sticky; top:0; z-index:100;
+  background:white;
+  padding:12px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 40px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
-nav a{
+nav .links a{
   margin:0 14px;
-  text-decoration:none;
   font-weight:600;
   color:#1f2937;
 }
-nav a:hover{color:#2563eb;}
-.theme-btn{
-  background:#2563eb;
-  color:white;
-  border:none;
-  padding:6px 14px;
-  border-radius:20px;
-  cursor:pointer;
-}
+nav .links a:hover{color:#2563eb}
 
-/* ---------- HEADER ---------- */
+/* ---------- HERO ---------- */
 header{
-  text-align:center;
   background:linear-gradient(135deg,#2563eb,#60a5fa);
   color:white;
-  padding:45px 20px;
+  text-align:center;
+  padding:40px 20px;
 }
 header img{
-  width:120px;
-  height:120px;
+  width:120px;height:120px;
   border-radius:50%;
-  border:3px solid #ffffff;
+  border:3px solid white;
   object-fit:cover;
 }
 .resume-btn{
-  margin-top:12px;
   display:inline-block;
-  background:#000000;
-  color:#ffffff;
-  padding:10px 18px;
+  margin-top:14px;
+  background:black;
+  color:white;
+  padding:10px 20px;
   border-radius:6px;
-  text-decoration:none;
   font-weight:600;
 }
 
@@ -71,63 +60,49 @@ header img{
 .section{
   max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:55px 20px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.8s ease;
+}
+.section.show{
+  opacity:1;
+  transform:none;
 }
 .section h2{
-  margin-bottom:20px;
   border-left:5px solid #2563eb;
   padding-left:12px;
+  margin-bottom:20px;
 }
 
-/* ---------- SKILLS ---------- */
-.skills h4{
-  margin-bottom:6px;
-  margin-top:18px;
+/* ---------- CARDS ---------- */
+.card{
+  background:white;
+  padding:28px;
+  border-radius:14px;
+  margin-bottom:28px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
-.skills p{
-  background:#ffffff;
+.card h3{margin-top:0}
+
+/* ---------- SKILLS ---------- */
+.skill-group h4{margin:16px 0 6px}
+.skill-group p{
+  background:white;
   padding:14px;
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* ---------- PROJECTS ---------- */
-.project-card{
-  background:#ffffff;
-  padding:28px;
-  border-radius:16px;
-  margin-bottom:30px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-.project-card h3{margin-top:0;}
-.project-card ul{margin-left:18px;}
-
-/* ---------- EXPERIENCE ---------- */
-.exp-card{
-  background:#ffffff;
-  padding:26px;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* ---------- CONTACT ---------- */
-.contact p a{
-  color:#2563eb;
-  font-weight:600;
-  text-decoration:none;
-}
-
-/* ---------- FLOATING CTA ---------- */
+/* ---------- CTA ---------- */
 .cta{
   position:fixed;
-  bottom:22px;
-  right:22px;
+  right:22px; bottom:22px;
   background:#2563eb;
   color:white;
   padding:14px 20px;
   border-radius:30px;
   font-weight:700;
-  text-decoration:none;
   box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 </style>
@@ -135,20 +110,19 @@ header img{
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAV -->
 <nav>
-  <div style="font-size:18px;font-weight:700;color:#2563eb;">Annem Venkareddy</div>
-  <div>
+  <strong style="color:#2563eb">Annem Venkareddy</strong>
+  <div class="links">
     About
     Skills
     Projects
     Experience
     Contact
   </div>
-  <button class="theme-btn" onclick="document.body.classList.toggle('dark')">Theme</button>
 </nav>
 
-<!-- ===== HEADER ===== -->
+<!-- HERO -->
 <header id="about">
   yourphoto.jpg
   <h1>Annem Venkareddy</h1>
@@ -156,129 +130,161 @@ header img{
   Resume.pdfDownload Resume</a>
 </header>
 
-<!-- ===== SUMMARY ===== -->
+<!-- SUMMARY -->
 <section class="section">
 <h2>Professional Summary</h2>
 <p>
-Data Analyst with hands-on experience delivering end-to-end Power BI solutions for manufacturing and business operations.
-Strong in building automated KPI dashboards, integrating multi-source data (IoT, SQL, Excel, SharePoint),
-and translating complex operational data into actionable insights for leadership teams.
-Proven expertise in data modeling, DAX, ETL automation, and performance analytics with real-world exposure to
-Tier-3 management reporting and decision support.
-Actively seeking analytics-focused roles where data can drive measurable business and operational impact.
+Detail‑oriented Data Analyst with hands‑on experience building end‑to‑end Power BI solutions for manufacturing
+and business operations. Proven ability to design centralized KPI dashboards covering Safety, Energy, Quality,
+Production, Maintenance, SCM, and Procurement to enable leadership‑level decision‑making.
+Strong expertise in SQL‑based data preparation, Power Query ETL automation, star‑schema modeling, and DAX‑driven
+analytics with automated refresh using Power BI Gateway. Experienced in collaborating with department heads
+and cross‑functional teams to translate business metrics into actionable insights.
 </p>
 </section>
 
-<!-- ===== SKILLS ===== -->
-<section class="section skills" id="skills">
+<!-- SKILLS -->
+<section class="section" id="skills">
 <h2>Core Skills</h2>
 
-<h4>Analytics & Business Intelligence</h4>
-<p>Power BI (Advanced DAX, KPI Dashboards, Storytelling), Forecasting, Variance & Trend Analysis</p>
+<div class="skill-group">
+<h4>Analytics & BI</h4>
+<p>
+Power BI (Advanced DAX, KPI Frameworks, Dashboards), Trend & Variance Analysis,
+Root Cause Analysis, Performance Monitoring
+</p>
 
 <h4>Data Engineering & ETL</h4>
-<p>Power Query (Automation, Cleaning, Validation), SQL (Joins, Aggregations), Star Schema Data Modeling</p>
+<p>
+SQL (Joins, Aggregations, Cleaning, Validation),
+Power Query (ETL Automation),
+Star Schema Data Modeling,
+Power BI Gateway
+</p>
 
 <h4>Business & Reporting</h4>
-<p>Operational KPI Frameworks, Tier-3 Management Reporting, BRD / FRD Documentation, Stakeholder Communication</p>
+<p>
+Operational KPI Design,
+Daily & Weekly Management Reviews,
+Business Metrics Analysis,
+Stakeholder Communication,
+Decision Support Analytics
+</p>
 
 <h4>Tools & Platforms</h4>
-<p>Power BI Service & Gateway, Excel, SharePoint, IoT Data Integration</p>
+<p>
+Power BI Service,
+Excel (Shared via SharePoint),
+SQL Server,
+CSV Data Sources
+</p>
+</div>
 </section>
 
-<!-- ===== PROJECTS ===== -->
+<!-- PROJECTS -->
 <section class="section" id="projects">
 <h2>Projects</h2>
 
-<div class="project-card">
-<h3>Plant-Level KPI Dashboard (Manufacturing Operations)</h3>
+<div class="card">
+<h3>Plant‑Level KPI Dashboard (Manufacturing Operations)</h3>
 
-<h4>Problem</h4>
-<p>
-Manufacturing departments (Safety, Quality, SCM, Maintenance, Production) tracked KPIs separately,
-leading to manual efforts, delays, and lack of centralized visibility before Tier‑3 reviews.
+<p><strong>Objective:</strong><br>
+Create a single centralized dashboard to track and monitor all key manufacturing KPIs at plant level,
+used daily by HODs to review performance and take corrective actions.
 </p>
 
-<h4>Solution</h4>
-<p>
-Designed and implemented a centralized Power BI dashboard integrating IoT data, SQL, Excel, and SharePoint
-to deliver real-time plant-level KPI visibility with automated refresh.
-</p>
-
-<h4>Technical Highlights</h4>
+<p><strong>Scope & Metrics Covered:</strong></p>
 <ul>
-<li>Star schema data model (Fact Production, Fact Machine, Dim Date, Department & Machine)</li>
-<li>50+ DAX measures for trends, targets, variance, efficiency</li>
-<li>Power Query ETL automation and data validation</li>
-<li>Power BI Gateway for scheduled refresh</li>
+<li>Safety metrics & incidents</li>
+<li>Energy consumption & efficiency</li>
+<li>Quality metrics & defects</li>
+<li>Production output & efficiency KPIs</li>
+<li>Maintenance performance & downtime</li>
+<li>SCM & Procurement key indicators</li>
 </ul>
 
-<h4>Business Impact</h4>
+<p><strong>Implementation:</strong></p>
 <ul>
-<li>Reduced manual reporting time from 2 hours to 10 seconds</li>
-<li>Improved leadership decision-making speed</li>
-<li>Single source of truth for plant KPIs</li>
+<li>Integrated Excel trackers shared via SharePoint, SQL‑processed datasets, and operational data sources</li>
+<li>Performed data cleaning, validation, and metric calculations using SQL and Power Query</li>
+<li>Designed star‑schema data model for performance & scalability</li>
+<li>Built interactive Power BI dashboards with drill‑downs and KPI comparisons</li>
+<li>Configured Power BI Gateway for automated refresh to eliminate manual intervention</li>
+</ul>
+
+<p><strong>Business Impact:</strong></p>
+<ul>
+<li>Enabled HOD‑level daily performance reviews</li>
+<li>Faster identification of low‑performing metrics</li>
+<li>Improved decision‑making speed and data accuracy</li>
+<li>Reduced manual reporting effort significantly</li>
 </ul>
 </div>
 
-<div class="project-card">
-<h3>Amazon Sales Performance Dashboard</h3>
+<div class="card">
+<h3>Amazon Sales Dashboard (E‑Commerce Analytics)</h3>
 
-<h4>Overview</h4>
 <p>
-Built an interactive Power BI dashboard to analyze e-commerce sales, order performance,
-returns, and fulfillment efficiency across regions and product categories.
+Developed an interactive Power BI dashboard using Amazon sales CSV data to analyze sales performance
+and customer behavior.
 </p>
 
-<h4>Key Analysis</h4>
 <ul>
-<li>Total Sales, Orders, Quantity, AOV</li>
-<li>Top-performing cities and states</li>
-<li>Category-wise contribution analysis</li>
+<li>Total Sales, Orders, Quantity, Average Order Value</li>
+<li>City‑wise and state‑wise sales performance</li>
+<li>Product category analysis</li>
+<li>Order status tracking (Shipped, Returned, Cancelled)</li>
 <li>Amazon vs Merchant fulfillment comparison</li>
-<li>Return and cancellation behavior trends</li>
 </ul>
 
-<h4>Insights</h4>
-<ul>
-<li>Bengaluru, Hyderabad, and Mumbai as top sales cities</li>
-<li>Amazon-fulfilled orders delivered higher revenue consistency</li>
-</ul>
+<p>
+Prepared and cleaned data using SQL and Power BI, enabling clear trend analysis and business insights
+for sales performance optimization.
+</p>
 </div>
 </section>
 
-<!-- ===== EXPERIENCE ===== -->
+<!-- EXPERIENCE -->
 <section class="section" id="experience">
 <h2>Experience</h2>
 
-<div class="exp-card">
+<div class="card">
 <h3>Business Analyst / Data Analyst — Aliaxis</h3>
 <p><em>Nov 2024 – Present</em></p>
-
 <ul>
-<li>Designed and maintained Plant-Level KPI dashboards using Power BI</li>
-<li>Integrated IoT, SQL, Excel, and SharePoint data sources</li>
-<li>Automated data pipelines using Power Query and Power BI Gateway</li>
-<li>Developed advanced DAX measures for trends, variance, and performance tracking</li>
-<li>Supported Tier-3 management reviews with real-time analytics</li>
-<li>Reduced manual reporting effort and improved operational visibility</li>
+<li>Built and maintained plant‑level KPI dashboards using Power BI</li>
+<li>Integrated data from SharePoint‑based Excel trackers and SQL sources</li>
+<li>Automated ETL workflows using Power Query and Power BI Gateway</li>
+<li>Developed DAX measures for operational KPIs, trends, and variance analysis</li>
+<li>Supported daily and weekly leadership review meetings</li>
+<li>Reduced manual reporting and improved metric visibility</li>
 </ul>
 </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
-<section class="section contact" id="contact">
+<!-- CONTACT -->
+<section class="section" id="contact">
 <h2>Contact</h2>
 <p><strong>Phone:</strong> 6305049638</p>
 <p><strong>Email:</strong> venkareddyannem@gmail.com</p>
 <p><strong>LinkedIn:</strong>
   https://www.linkedin.com/in/venkareddy-annem-59552524b/
-    linkedin.com/in/venkareddy-annem
+    Open LinkedIn Profile
   </a>
 </p>
 </section>
 
 #contactHire Me</a>
+
+<script>
+const sections=document.querySelectorAll('.section');
+const obs=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting)e.target.classList.add('show');
+ });
+},{threshold:.15});
+sections.forEach(s=>obs.observe(s));
+</script>
 
 </body>
 </html>
