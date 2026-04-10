@@ -72,8 +72,11 @@ header img {
   display: inline-block;
   margin-top: 12px;
 }
-.resume-btn:hover { background: #2563eb; }
-
+.resume-btn:hover {
+  background:#2563eb;
+  box-shadow:0 0 10px #60a5fa, 0 0 20px #2563eb;
+  transform: translateY(-3px);
+}
 /* SECTION */
 .section {
   max-width: 1100px;
@@ -131,6 +134,71 @@ header img {
   }
   .menu a { margin: 10px 0; }
   .hamburger { display: block; }
+}
+
+/* ✅ PROJECT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.project-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+body.dark .project-item {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+/* ✅ TIMELINE */
+.timeline {
+  position: relative;
+  margin-left: 25px;
+  padding-left: 20px;
+  border-left: 3px solid #2563eb;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: #2563eb;
+  border-radius: 50%;
+}
+
+.timeline-content {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+body.dark .timeline-content {
+  background: #1e293b;
+  border: 1px solid #334155;
 }
 </style>
 </head>
@@ -245,21 +313,54 @@ transition:0.3s;">
   </div>
 </section>
 
-<!-- ✅ PROJECTS -->
-<section class="section" id="projects">
+<!-- ✅ PROJECTS (Premium Grid Layout) -->
+<section class="section fade-in" id="projects">
   <h2>Projects</h2>
 
-  <div class="project-card">
-    <h3>📊 Manufacturing Plant KPI Dashboard</h3>
-    <p>Built dashboards for Safety, Production, Maintenance & Energy metrics.</p>
-  </div>
+  <div class="grid">
+    <div class="project-item">
+      your_dashboard_image1.jpg
+      <div class="project-info">
+        <h3>📊 Manufacturing KPI Dashboard</h3>
+        <p>Interactive KPIs for Production, Maintenance, Quality & Safety using Power BI + SQL ETL.</p>
+      </div>
+    </div>
 
-  <div class="project-card">
-    <h3>🛒 Amazon Sales Dashboard</h3>
-    <p>Sales trend, city performance & insights using SQL + Power BI.</p>
+    <div class="project-item">
+      your_dashboard_image2.jpg
+      <div class="project-info">
+        <h3>🛒 Amazon Sales Dashboard</h3>
+        <p>Sales performance, trends, and city-level analytics using SQL + Power BI.</p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      your_dashboard_image3.jpg
+      <div class="project-info">
+        <h3>📉 KPI Anomaly Detection</h3>
+        <p>Python-based anomaly detection for forecasting operational deviations.</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ✅ EXPERIENCE TIMELINE -->
+<section class="section fade-in">
+  <h2>Experience Timeline</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Engineer – Operational Excellence (Data Analyst)</h3>
+        <p><strong>Aliaxis</strong> — Nov 2024 – Present</p>
+        <p>Built multi-plant KPI dashboards, SQL ETL pipelines, and automated reporting systems.</p>
+      </div>
+    </div>
+
+  </div>
+</section>  
 <!-- ✅ EXPERIENCE SECTION -->
 <section class="section fade-in" id="experience">
   <h2>Experience</h2>
@@ -305,6 +406,20 @@ transition:0.3s;">
       <li>Coordinated PR/PO workflow with Procurement.</li>
     </ul>
 
+  </div>
+</section>
+  
+  <!-- ✅ CERTIFICATIONS -->
+<section class="section fade-in" id="certifications">
+  <h2>Certifications</h2>
+
+  <div class="card">
+    <ul style="line-height:1.8;">
+      <li>📜 IIBA – Data Visualization for Data Analysts (2026)</li>
+      <li>🗄️ LinkedIn – Database Foundations (2026)</li>
+      <li>📊 PMI – Project Management Foundations: Budgeting (2025)</li>
+      <li>🔍 NASBA – Data Analytics Foundations (2025)</li>
+    </ul>
   </div>
 </section>
 <!-- ✅ CONTACT -->
