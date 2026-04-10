@@ -158,8 +158,12 @@ header img {
 <header id="about">
   <img src="yourphoto.jpg" alt="Profile Photo" />
 
-  <h1 id="typed-text" style="margin-top:15px; font-size:2.2rem; font-weight:700;"></h1>
-<p id="typed-subtext" style="font-size:1.1rem; margin-top:8px;">Data Analyst | Power BI | SQL | Python</p>
+  <h1 style="margin-top:15px; font-size:2.2rem; font-weight:700;">
+  Annem Venkareddy
+</h1>
+<p style="font-size:1.1rem; margin-top:8px;">
+  Data Analyst | Power BI | SQL | Python
+</p>
 
   
 <a href="Resume.pdf" target="_blank" class="resume-btn" style="
@@ -324,51 +328,9 @@ function toggleMenu() {
 document.getElementById("toggleDark").onclick = function () {
   document.body.classList.toggle("dark");
   this.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-<script>
-const roles = [
-  "Data Analyst",
-  "Power BI Developer",
-  "SQL ETL Developer",
-  "Python Automation Analyst"
-];
-
-let i = 0, j = 0;
-let isDeleting = false;
-let current = "";
-
-function typeEffect() {
-    current = roles[i];
-
-    // ✅ Typing speed (slow and readable)
-    let speed = isDeleting ? 80 : 140;
-
-    // ✅ Type text
-    if (!isDeleting) {
-        document.getElementById("typed-text").innerText = current.substring(0, j++);
-    } 
-    // ✅ Delete text
-    else {
-        document.getElementById("typed-text").innerText = current.substring(0, j--);
-    }
-
-    // ✅ When typing finishes, pause 1.5 sec before deleting
-    if (!isDeleting && j === current.length) {
-        setTimeout(() => isDeleting = true, 1500);
-    }
-
-    // ✅ When deleting finishes, go to next role
-    else if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % roles.length; // cycle roles
-    }
-
-    setTimeout(typeEffect, speed);
-}
-
-typeEffect();
-
 };
 </script>
+
 
 </body>
 </html>
