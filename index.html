@@ -1,215 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Annem Venkareddy | Data Analyst</title>
 
 <style>
+
 /* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
   font-family: Arial, Helvetica, sans-serif;
-  background: #f5f7fb;
-  color: #1f2937;
-  transition: 0.3s;
+  background:#f5f5ff;
+  color:#222;
+  transition:0.3s;
 }
 
 /* DARK MODE */
-body.dark { background: #0f172a; color: white; }
-body.dark nav { background: #1e293b; border-bottom: 1px solid #334155; }
-body.dark .card, body.dark .project-card {
-  background: #1e293b; color: white; border-color: #334155;
+body.dark{background:#0a0a14;color:white;}
+body.dark nav{background:#1a1a2e;border-bottom:1px solid #333;}
+body.dark .card,body.dark .project-row{
+  background:#1a1a2e;
+  border-color:#333;
 }
-body.dark header {
-  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+body.dark h2{color:#d0b3ff;}
+body.dark .cta{background:#9b5cff;}
+body.dark .menu a{color:white;}
+body.dark .menu a:hover{color:#b388ff;}
+body.dark header{
+  background:linear-gradient(135deg,#5a00ff,#c77dff);
 }
 
-/* ✅ FIX NAVBAR LINK COLOR IN DARK MODE */
-body.dark .menu a {
-  color: white;
+/* PURPLE NEON THEME */
+:root{
+  --primary:#8b5cf6;
+  --primary-glow:#c084fc;
+  --dark:#1a1a2e;
 }
 
-body.dark .menu a:hover {
-  color: #60a5fa;
-}
 /* NAVBAR */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: white;
-  padding: 15px 35px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-bottom: 1px solid #e5e7eb;
+nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:white;
+  padding:15px 35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ddd;
 }
-.menu { display: flex; gap: 20px; }
-.menu a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #1f2937;
+.menu{display:flex;gap:25px;}
+.menu a{
+  color:#222;
+  text-decoration:none;
+  font-weight:600;
 }
-.menu a:hover { color: #2563eb; }
-
-.hamburger { display: none; font-size: 28px; cursor: pointer; }
+.menu a:hover{color:var(--primary);}
+.hamburger{display:none;font-size:28px;cursor:pointer;}
+#toggleDark{cursor:pointer;font-size:22px;}
 
 /* HERO */
-header {
-  background: linear-gradient(135deg, #1d4ed8, #60a5fa);
-  padding: 50px 20px;
-  text-align: center;
-  color: white;
-}
-header img {
-  width: 120px; height: 120px; border-radius: 50%;
-  border: 3px solid white; object-fit: cover;
-}
-
-.resume-btn {
-  background: black; color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 12px;
-}
-.resume-btn:hover {
-  background:#2563eb !important;
-  box-shadow:0 0 12px #60a5fa, 0 0 22px #2563eb;
-  transform:translateY(-3px);
-}
-}
-/* SECTION */
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 55px 20px;
-}
-.section h2 {
-  border-left: 5px solid #2563eb;
-  padding-left: 10px;
-  margin-bottom: 22px;
-}
-
-.card, .project-card {
-  background: white;
-  padding: 22px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.1);
-}
-.project-card:hover {
-  transform: translateY(-8px);
-  transition: 0.3s;
-  border: 1px solid #2563eb;
-}
-
-/* FIXED CTA */
-.cta {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #2563eb;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* DARK MODE BUTTON */
-#toggleDark { cursor: pointer; font-size: 22px; }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 65px;
-    right: 20px;
-    width: 170px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-  .menu a { margin: 10px 0; }
-  .hamburger { display: block; }
-}
-
-/* ✅ FULL WIDTH PROJECT CARDS */
-.project-row {
-  display: flex;
-  align-items: center;
-  background: white;
-  padding: 20px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.project-row:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.project-img {
-  width: 180px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-right: 20px;
-  background:#e5e7eb;
-}
-
-.project-text h3 {
-  margin-bottom: 5px;
-}
-
-.read-more {
-  background:#2563eb;
+header{
+  background:linear-gradient(135deg,#7c3aed,#c084fc);
+  padding:60px 20px;
+  text-align:center;
   color:white;
-  padding:8px 15px;
-  border:none;
-  border-radius:5px;
-  margin-top:8px;
-  cursor:pointer;
+}
+header img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:4px solid white;
+  object-fit:cover;
+}
+
+/* RESUME BUTTON */
+.resume-btn{
+  background:black;
+  color:white;
+  padding:12px 30px;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  margin-top:25px;
+  display:inline-block;
   transition:0.3s;
 }
-.read-more:hover {
-  background:#1e40af;
+.resume-btn:hover{
+  background:var(--primary);
+  box-shadow:0 0 12px var(--primary-glow),0 0 25px var(--primary);
+  transform:translateY(-3px);
 }
 
-/* ✅ DARK MODE FIX */
-body.dark .project-row { background:#1e293b; border:1px solid #334155; }
-body.dark .modal-content { background:#1e293b; color:white; }
-
-/* ✅ MODAL POPUP */
-.modal {
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.5);
-  z-index:9999;
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
+.section h2{
+  border-left:5px solid var(--primary);
+  padding-left:10px;
+  margin-bottom:25px;
+  font-size:1.8rem;
 }
 
-.modal-content {
+/* CARDS */
+.card{
   background:white;
   padding:25px;
-  width:70%;
-  margin:10% auto;
   border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.2);
-  animation: fadeIn 0.4s;
+  margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,0.08);
 }
 
-.close {
+/* PROJECT ROW */
+.project-row{
+  display:flex;
+  gap:20px;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.project-row:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.project-img{
+  width:180px;
+  height:110px;
+  border-radius:10px;
+  object-fit:cover;
+  background:#ddd;
+}
+
+/* READ MORE BUTTON */
+.read-more{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:10px;
+  transition:0.3s;
+}
+.read-more:hover{
+  background:#6d28d9;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+}
+.modal-content{
+  background:white;
+  width:70%;
+  margin:10% auto;
+  padding:25px;
+  border-radius:12px;
+}
+.close{
   float:right;
   font-size:28px;
   cursor:pointer;
 }
+
+/* CTA BUTTON */
+.cta{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:var(--primary);
+  padding:15px 25px;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .project-row{flex-direction:column;text-align:center;}
+  .project-img{margin:auto;}
+  .menu{
+    display:none;
+    flex-direction:column;
+    background:white;
+    position:absolute;
+    top:70px;
+    right:20px;
+    padding:20px;
+    border-radius:10px;
+    width:200px;
+  }
+  .hamburger{display:block;}
+}
+
 </style>
 </head>
 
@@ -217,7 +213,7 @@ body.dark .modal-content { background:#1e293b; color:white; }
 
 <!-- ✅ NAVBAR -->
 <nav>
-  <strong style="color:#2563eb;">Annem Venkareddy</strong>
+  <strong style="color:var(--primary); font-size:1.2rem;">Annem Venkareddy</strong>
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
@@ -235,56 +231,43 @@ body.dark .modal-content { background:#1e293b; color:white; }
 <!-- ✅ HERO -->
 <header id="about">
   <img src="yourphoto.jpg" alt="Profile Photo" />
+  <h1 style="margin-top:15px;font-size:2.3rem;font-weight:700;">Annem Venkareddy</h1>
+  <p style="font-size:1.1rem;margin-top:8px;">Data Analyst | Power BI | SQL | Python</p>
 
-  <h1 style="margin-top:15px; font-size:2.2rem; font-weight:700;">
-  Annem Venkareddy
-</h1>
-<p style="font-size:1.1rem; margin-top:8px;">
-  Data Analyst | Power BI | SQL | Python
-</p>
-
-  
-<a href="Resume.pdf" target="_blank" class="resume-btn" style="
-background:#000; padding:15px 28px; border-radius:50px; 
-font-size:1rem; font-weight:600; box-shadow:0 4px 10px rgba(0,0,0,0.2);
-transition:0.3s;">
-⬇ Download Resume
-</a>
-
+  <a href="Resume.pdf" target="_blank" class="resume-btn">⬇ Download Resume</a>
 </header>
-<!-- ✅ SKILL ICONS ROW -->
-<section class="section fade-in" style="text-align:center; margin-top:-20px;">
-  <div style="display:flex; justify-content:center; gap:35px; flex-wrap:wrap;">
 
-    <div style="text-align:center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" width="55">
+<!-- ✅ SKILLS ICON ROW -->
+<section class="section" style="text-align:center;">
+  <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+    
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" width="60">
       <p><strong>Power BI</strong></p>
     </div>
 
-    <div style="text-align:center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="55">
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="60">
       <p><strong>SQL</strong></p>
     </div>
 
-    <div style="text-align:center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="55">
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="60">
       <p><strong>Python</strong></p>
     </div>
 
-    <div style="text-align:center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" width="55">
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" width="60">
       <p><strong>Excel</strong></p>
     </div>
-
   </div>
 </section>
 
-<!-- ✅ SUMMARY - Animated -->
-<section class="section fade-in" id="summary">
+<!-- ✅ SUMMARY -->
+<section class="section" id="summary">
   <h2>Professional Summary</h2>
-
-  <div class="card" style="animation: slideUp 0.8s ease forwards;">
-    <p style="font-size: 1.1rem; line-height: 1.7;">
+  <div class="card">
+    <p style="font-size:1.1rem;line-height:1.7;">
       I am a Data Analyst specializing in KPI dashboards, SQL-driven ETL pipelines, and operational analytics.
       I convert raw manufacturing data into automated insights, real-time KPI systems, and leadership-ready dashboards.
       With experience across Production, Quality, Maintenance, SCM, and Safety teams, I build analytics solutions
@@ -293,74 +276,71 @@ transition:0.3s;">
   </div>
 </section>
 
-<!-- ✅ SKILLS SECTION -->
-<section class="section fade-in" id="skills">
+<!-- ✅ SKILLS -->
+<section class="section" id="skills">
   <h2>Skills</h2>
 
-  <div class="card" style="animation: zoomIn 0.8s ease forwards;">
+  <div class="card">
     <h3>⭐ Technical Skills</h3><br>
-
-    <ul style="line-height: 1.9;">
-      <li>📊 <strong>Power BI</strong> — DAX (30+ measures), KPI Dashboards, Star Schema Modeling, Automated Refresh</li>
-      <li>🗄️ <strong>SQL</strong> — Joins, CTEs, Window Functions, Data Cleaning & Validation, ETL Pipelines</li>
-      <li>🐍 <strong>Python</strong> — Pandas, NumPy, Data Cleaning, Visualization, Anomaly Detection Logic</li>
-      <li>📑 <strong>Excel / Google Sheets</strong> — Pivot Tables, XLOOKUP, Automation, Dashboards</li>
-      <li>⚙️ <strong>Power Query (ETL)</strong> — Transformation Automation, Data Quality, Multi-Source Integration</li>
+    <ul style="line-height:1.9;">
+      <li><strong>Power BI</strong> — DAX, KPI dashboards, star schema, refresh automation</li>
+      <li><strong>SQL</strong> — Joins, CTEs, window functions, ETL pipelines</li>
+      <li><strong>Python</strong> — Pandas, NumPy, anomaly detection</li>
+      <li><strong>Excel</strong> — Pivot Tables, XLOOKUP, dashboards</li>
+      <li><strong>Power Query</strong> — Transformations, data quality</li>
     </ul>
   </div>
 
-  <div class="card" style="animation: zoomIn 0.9s ease forwards;">
+  <div class="card">
     <h3>⭐ Analytics & Business Skills</h3><br>
-
-    <ul style="line-height: 1.9;">
-      <li>📌 KPI Analysis — OEE, Downtime, Rejection, OTIF, Maintenance KPIs</li>
-      <li>🔍 RCA + CAPA Execution & KPI Monitoring</li>
-      <li>📈 Forecasting & Anomaly Detection</li>
-      <li>🧭 SMED, DILO, Process Mapping</li>
-      <li>📊 Business Case Creation (ROI, NPV, Payback)</li>
-      <li>🤝 Stakeholder & Leadership Reporting</li>
+    <ul style="line-height:1.9;">
+      <li>KPI Analysis — OEE, Downtime, Rejection, OTIF</li>
+      <li>RCA + CAPA Execution</li>
+      <li>Forecasting & Anomaly Detection</li>
+      <li>SMED, DILO, Process Mapping</li>
+      <li>ROI, NPV, Payback calculations</li>
     </ul>
   </div>
 </section>
 
-<!-- ✅ PROJECTS – Full Width Cards -->
-<section class="section fade-in" id="projects">
+<!-- ✅ PROJECTS -->
+<section class="section" id="projects">
   <h2>Projects</h2>
 
-  <!-- ✅ Project 1 -->
   <div class="project-row">
-    <img src="your_dashboard_image1.jpg" class="project-img">
-    <div class="project-text">
+    <img src="https://via.placeholder.com/180x110" class="project-img">
+    <div>
       <h3>📊 Manufacturing KPI Dashboard</h3>
       <p>Interactive KPIs for Production, Maintenance, Quality & Safety.</p>
       <button class="read-more" onclick="openModal('modal1')">Read More</button>
     </div>
   </div>
 
-  <!-- ✅ Project 2 -->
   <div class="project-row">
-    <img src="your_dashboard_image2.jpg" class="project-img">
-    <div class="project-text">
+    <img src="https://via.placeholder.com/180x110" class="project-img">
+    <div>
       <h3>🛒 Amazon Sales Dashboard</h3>
       <p>Sales performance, trends, and city-level insights.</p>
       <button class="read-more" onclick="openModal('modal2')">Read More</button>
     </div>
   </div>
 
-  <!-- ✅ Project 3 -->
   <div class="project-row">
-    <img src="your_dashboard_image3.jpg" class="project-img">
-    <div class="project-text">
+    <img src="https://via.placeholder.com/180x110" class="project-img">
+    <div>
       <h3>📉 KPI Anomaly Detection</h3>
       <p>Python-based anomaly & forecasting automation.</p>
       <button class="read-more" onclick="openModal('modal3')">Read More</button>
     </div>
-    <!-- ✅ PROJECT MODALS -->
+  </div>
+</section>
+
+<!-- ✅ MODALS -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal1')">&times;</span>
     <h2>Manufacturing KPI Dashboard</h2>
-    <p>Full detailed explanation of your KPI dashboard will appear here.</p>
+    <p>Project details will be added later.</p>
   </div>
 </div>
 
@@ -368,7 +348,7 @@ transition:0.3s;">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal2')">&times;</span>
     <h2>Amazon Sales Dashboard</h2>
-    <p>Full detailed explanation will appear here.</p>
+    <p>Project details will be added later.</p>
   </div>
 </div>
 
@@ -376,104 +356,82 @@ transition:0.3s;">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal3')">&times;</span>
     <h2>KPI Anomaly Detection</h2>
-    <p>Full detailed explanation will appear here.</p>
+    <p>Project details will be added later.</p>
   </div>
 </div>
-  </div>
-</section>  
-  
-<!-- ✅ EXPERIENCE SECTION -->
-<section class="section fade-in" id="experience">
+
+<!-- ✅ EXPERIENCE -->
+<section class="section" id="experience">
   <h2>Experience</h2>
 
-  <div class="card" style="animation: slideUp 0.8s ease forwards;">
-
+  <div class="card">
     <h3>Engineer – Operational Excellence (Data Analyst)</h3>
     <p><strong>Aliaxis</strong> — Nov 2024 to Present</p>
     <br>
 
     <h3>⭐ Data Analytics & Reporting</h3>
-    <ul style="line-height: 1.9;">
-      <li>Developed plant-level KPI dashboards for <strong>3 plants</strong> using SQL + Power BI + Power Query.</li>
-      <li>Created <strong>30+ DAX measures</strong> for OEE, Downtime, Rejection, OTIF, Safety & Maintenance KPIs.</li>
-      <li>Automated reports & refresh cycles reducing manual reporting by <strong>4+ hours/week</strong>.</li>
-    </ul>
-    <br>
+    <ul style="line-height:1.9;">
+      <li>Developed plant-level KPI dashboards for 3 plants.</li>
+      <li>Created 30+ DAX measures for OEE, downtime & more.</li>
+      <li>Automated reporting saving 4+ hours weekly.</li>
+    </ul><br>
 
     <h3>⭐ Data Engineering & ETL</h3>
-    <ul style="line-height: 1.9;">
-      <li>Designed <strong>SQL ETL pipelines</strong> for data cleaning & transformation.</li>
-      <li>Built <strong>Star Schema</strong> data models for accurate KPI computation.</li>
-    </ul>
-    <br>
+    <ul style="line-height:1.9;">
+      <li>Designed SQL ETL pipelines.</li>
+      <li>Built star schema models.</li>
+    </ul><br>
 
     <h3>⭐ Operational Insights</h3>
-    <ul style="line-height: 1.9;">
-      <li>Performed downtime & rejection RCA with cross-functional teams.</li>
-      <li>Tracked CAPA improvements using automated analytics dashboards.</li>
-    </ul>
-    <br>
+    <ul style="line-height:1.9;">
+      <li>Performed RCA for downtime & rejection.</li>
+      <li>Automated CAPA monitoring dashboards.</li>
+    </ul><br>
 
     <h3>⭐ OPEX & Cost Savings</h3>
-    <ul style="line-height: 1.9;">
-      <li>Supported 30+ OPEX projects achieving <strong>₹3.66 Cr annual savings</strong>.</li>
-      <li>Executed SMED, DILO, process mapping & bottleneck analysis.</li>
-    </ul>
-    <br>
+    <ul style="line-height:1.9;">
+      <li>Supported 30+ OPEX projects achieving ₹3.66 Cr savings.</li>
+      <li>Executed SMED, DILO & process mapping.</li>
+    </ul><br>
 
     <h3>⭐ Business Case & CAPEX</h3>
-    <ul style="line-height: 1.9;">
-      <li>Prepared ROI, NPV & Payback for major CAPEX proposals.</li>
-      <li>Coordinated PR/PO workflow with Procurement.</li>
-    </ul>
-
-  </div>
-</section>
-  
-  <!-- ✅ CERTIFICATIONS -->
-<section class="section fade-in" id="certifications">
-  <h2>Certifications</h2>
-
-  <div class="card">
-    <ul style="line-height:1.8;">
-      <li>📜 IIBA – Data Visualization for Data Analysts (2026)</li>
-      <li>🗄️ LinkedIn – Database Foundations (2026)</li>
-      <li>📊 PMI – Project Management Foundations: Budgeting (2025)</li>
-      <li>🔍 NASBA – Data Analytics Foundations (2025)</li>
+    <ul style="line-height:1.9;">
+      <li>Prepared ROI, NPV & Payback analysis.</li>
+      <li>Coordinated PR/PO with Procurement.</li>
     </ul>
   </div>
 </section>
+
 <!-- ✅ CONTACT -->
 <section class="section" id="contact">
   <h2>Contact</h2>
   <p>📞 6305049638</p>
   <p>📧 venkareddyannem@gmail.com</p>
-  <p>💼 <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
+  <p>💼 <a href="https://www.linkedin.com/in/venkareddy-annem-59552524b" target="_blank">LinkedIn Profile</a></p>
 </section>
 
-<!-- ✅ FIXED CTA BUTTON -->
+<!-- ✅ CTA -->
 <a href="#contact" class="cta">Hire Me</a>
 
 <!-- ✅ JAVASCRIPT -->
 <script>
-function toggleMenu() {
-  const menu = document.getElementById("navMenu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+function toggleMenu(){
+  const m=document.getElementById("navMenu");
+  m.style.display=m.style.display==="flex"?"none":"flex";
 }
-
-document.getElementById("toggleDark").onclick = function () {
+document.getElementById("toggleDark").onclick=function(){
   document.body.classList.toggle("dark");
-  this.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  this.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
 };
-  function openModal(id) {
-  document.getElementById(id).style.display = "block";
-}
 
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
+function openModal(id){
+  document.getElementById(id).style.display="block";
+}
+function closeModal(id){
+  document.getElementById(id).style.display="none";
 }
 </script>
 
-
 </body>
 </html>
+``
