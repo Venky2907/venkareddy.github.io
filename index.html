@@ -16,7 +16,9 @@ body{
 
 /* NAV */
 nav{
-  position:sticky; top:0; z-index:100;
+  position:sticky; 
+  top:0; 
+  z-index:100;
   background:#fff;
   padding:12px 40px;
   box-shadow:0 2px 10px rgba(0,0,0,0.08);
@@ -37,20 +39,21 @@ header{
   background:linear-gradient(135deg,#2563eb,#60a5fa);
   color:#fff;
   text-align:center;
-  padding:40px 20px;
+  padding:50px 20px;
 }
 header img{
-  width:120px; height:120px;
+  width:130px; 
+  height:130px;
   border-radius:50%;
   border:3px solid #fff;
   object-fit:cover;
 }
 .resume-btn{
   display:inline-block;
-  margin-top:14px;
+  margin-top:20px;
   background:#000;
   color:#fff;
-  padding:10px 20px;
+  padding:12px 20px;
   border-radius:6px;
   font-weight:600;
   text-decoration:none;
@@ -76,10 +79,11 @@ header img{
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* CTA */
+/* CTA BUTTON */
 .cta{
   position:fixed;
-  right:22px; bottom:22px;
+  right:22px; 
+  bottom:22px;
   background:#2563eb;
   color:#fff;
   padding:14px 20px;
@@ -93,103 +97,111 @@ header img{
 
 <body>
 
+<!-- ✅ NAVIGATION FIXED -->
 <nav>
   <strong style="color:#2563eb">Annem Venkareddy</strong>
   <div>
-    #aboutAbout</a>
-    #skillsSkills</a>
-    #projectsProjects</a>
-    #experienceExperience</a>
-    #contactContact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
+<!-- ✅ ABOUT SECTION -->
 <header id="about">
-  yourphoto.jpg
+  <img src="yourphoto.jpg" alt="Profile Photo">
   <h1>Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
-  Resume.pdfDownload Resume</a>
+
+  <!-- Resume Button -->
+  <a class="resume-btn" href="Resume.pdf" download>Download Resume</a>
 </header>
 
+<!-- ✅ PROFESSIONAL SUMMARY -->
 <section class="section">
 <h2>Professional Summary</h2>
 <p>
 Data Analyst with hands-on experience building end-to-end Power BI solutions for manufacturing operations.
-Designed centralized KPI dashboards covering Safety, Energy, Quality, Production, Maintenance, SCM, and Procurement,
-used daily by department heads for performance review and decision-making.
-Strong expertise in SQL-based data preparation, Power Query ETL automation, star-schema modeling,
-advanced DAX measures, and Power BI Gateway for automated refresh.
+Designed centralized KPI dashboards covering Safety, Energy, Quality, Production, Maintenance, SCM, and Procurement.
+Strong expertise in SQL, Power Query ETL automation, star-schema modeling, advanced DAX, and Power BI Gateway.
 </p>
 </section>
 
+<!-- ✅ SKILLS -->
 <section class="section" id="skills">
 <h2>Skills</h2>
 
 <div class="card">
 <strong>Analytics & BI</strong><br>
-Power BI (DAX, KPI Design, Dashboards), Trend & Variance Analysis, Root Cause Analysis
+Power BI, DAX, KPI Design, Dashboards, Trend Analysis, RCA
 </div>
 
 <div class="card">
 <strong>Data Engineering & ETL</strong><br>
-SQL (joins, cleaning, aggregations), Power Query, Star Schema Modeling, Power BI Gateway
+SQL, Power Query, Star Schema, Data Cleaning, Power BI Gateway
 </div>
 
 <div class="card">
 <strong>Business & Reporting</strong><br>
-Operational KPIs, Daily HOD Reviews, Stakeholder Communication, Decision Support
+Operational KPIs, HOD Reviews, Reporting Automation, Stakeholder Communication
 </div>
 </section>
 
+<!-- ✅ PROJECTS -->
 <section class="section" id="projects">
 <h2>Projects</h2>
 
 <div class="card">
 <h3>Plant-Level KPI Dashboard (Manufacturing)</h3>
 <p>
-Built a centralized Power BI dashboard integrating SharePoint-based Excel trackers and SQL-processed data to track
-Safety, Energy, Quality, Production, Maintenance, SCM, and Procurement KPIs.
-Used by HODs in daily meetings to identify low-performing metrics and take corrective action.
-Automated refresh using Power BI Gateway to eliminate manual reporting.
+Built centralized Power BI dashboards integrating Excel/SharePoint data to monitor all key functions:
+Safety, Energy, Quality, Production, Maintenance, SCM, Procurement.
+Used by HODs for daily decision-making.
 </p>
 </div>
 
 <div class="card">
 <h3>Amazon Sales Dashboard</h3>
 <p>
-Developed an analytical dashboard from Amazon sales CSV data using SQL and Power BI
-to analyze sales, order status, city-level performance, and fulfillment effectiveness.
+Developed analytics dashboard using Amazon sales CSV, SQL preprocessing, and Power BI.
+Analyzed sales, order status, and city-level performance.
 </p>
 </div>
 </section>
 
+<!-- ✅ EXPERIENCE -->
 <section class="section" id="experience">
 <h2>Experience</h2>
 
 <div class="card">
 <h3>Business Analyst / Data Analyst – Aliaxis</h3>
 <ul>
-<li>Developed plant-level KPI dashboards using Power BI</li>
-<li>Prepared and cleaned data using SQL and Power Query</li>
-<li>Automated reporting via Power BI Gateway</li>
-<li>Supported HOD and leadership decision-making</li>
+<li>Developed plant-level Power BI dashboards</li>
+<li>Cleaned & prepared data using SQL + Power Query</li>
+<li>Automated reporting using Power BI Gateway</li>
+<li>Supported HOD & leadership decision-making</li>
 </ul>
 </div>
 </section>
 
+<!-- ✅ CONTACT -->
 <section class="section" id="contact">
 <h2>Contact</h2>
 <p>📞 6305049638</p>
 <p>📧 venkareddyannem@gmail.com</p>
+
 <p>
 💼 
-https://www.linkedin.com/in/venkareddy-annem-59552524b/
+<a href="https://www.linkedin.com/in/venkareddy-annem-59552524b/" target="_blank">
 LinkedIn Profile
 </a>
 </p>
 </section>
 
-#contactHire Me</a>
+<!-- ✅ FLOATING CTA BUTTON -->
+<a class="cta" href="#contact">Hire Me</a>
 
 </body>
 </html>
