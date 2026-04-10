@@ -1,145 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Annem Venkareddy | Data Analyst</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-
 /* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background:#f5f7fb;
-  color:#1f2937;
-  transition:0.3s;
+  background: #f5f7fb;
+  color: #1f2937;
+  transition: 0.3s;
 }
 
-/* ✅ DARK MODE */
-body.dark {
-  background:#0f172a;
-  color:white;
+/* DARK MODE */
+body.dark { background: #0f172a; color: white; }
+body.dark nav { background: #1e293b; border-bottom: 1px solid #334155; }
+body.dark .card, body.dark .project-card {
+  background: #1e293b; color: white; border-color: #334155;
 }
-body.dark nav{
-  background:#1e293b;
-  border-bottom:1px solid #334155;
-}
-body.dark .card,
-body.dark .project-card{
-  background:#1e293b;
-  color:white;
-  border-color:#334155;
-}
-body.dark header{
-  background:linear-gradient(135deg,#0ea5e9,#3b82f6);
+body.dark header {
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
 }
 
-/* ANIMATIONS */
-.fade-in{opacity:0;animation:fadeIn 1s forwards;}
-@keyframes fadeIn{to{opacity:1;}}
-.slide-up{opacity:0;transform:translateY(25px);animation:slideUp 0.8s forwards;}
-@keyframes slideUp{to{opacity:1;transform:none;}}
-.zoom-in{opacity:0;transform:scale(0.85);animation:zoomIn 0.9s forwards;}
-@keyframes zoomIn{to{opacity:1;transform:scale(1);}}
+/* NAVBAR */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: white;
+  padding: 15px 35px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+.menu { display: flex; gap: 20px; }
+.menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1f2937;
+}
+.menu a:hover { color: #2563eb; }
 
-/* ✅ NAVBAR */
-nav{
-  position:sticky;top:0;z-index:100;
-  background:white;padding:15px 35px;
-  display:flex;justify-content:space-between;align-items:center;
-  border-bottom:1px solid #e5e7eb;
-}
-
-/* NAV LINKS */
-.menu{
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-.menu a{
-  text-decoration:none;
-  font-weight:600;
-  color:#1f2937;
-}
-.menu a:hover{color:#2563eb;}
-
-/* ✅ MOBILE MENU */
-.hamburger{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
+.hamburger { display: none; font-size: 28px; cursor: pointer; }
 
 /* HERO */
-header{
-  background:linear-gradient(135deg,#1d4ed8,#60a5fa);
-  padding:60px 20px;text-align:center;color:white;
+header {
+  background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+header img {
+  width: 120px; height: 120px; border-radius: 50%;
+  border: 3px solid white; object-fit: cover;
 }
 
-header img{
-  width:120px;height:120px;border-radius:50%;
-  border:3px solid white;object-fit:cover;
+.resume-btn {
+  background: black; color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 12px;
+}
+.resume-btn:hover { background: #2563eb; }
+
+/* SECTION */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 55px 20px;
+}
+.section h2 {
+  border-left: 5px solid #2563eb;
+  padding-left: 10px;
+  margin-bottom: 22px;
 }
 
-/* BUTTONS */
-.resume-btn{
-  background:black;color:white;padding:12px 25px;
-  text-decoration:none;border-radius:8px;font-weight:600;
-  display:inline-block;margin-top:12px;
+.card, .project-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.1);
 }
-.resume-btn:hover{background:#2563eb;}
-
-.section{
-  max-width:1100px;margin:auto;padding:55px 20px;
-}
-.section h2{
-  border-left:5px solid #2563eb;padding-left:10px;margin-bottom:22px;
+.project-card:hover {
+  transform: translateY(-8px);
+  transition: 0.3s;
+  border: 1px solid #2563eb;
 }
 
-.card,.project-card{
-  background:white;padding:22px;border-radius:12px;margin-bottom:20px;
-  box-shadow:0 5px 18px rgba(0,0,0,0.1);
+/* FIXED CTA */
+.cta {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.project-card:hover{
-  transform:translateY(-8px);border:1px solid #2563eb;transition:0.3s;
-}
+/* DARK MODE BUTTON */
+#toggleDark { cursor: pointer; font-size: 22px; }
 
-/* ✅ FIXED CTA BUTTON */
-.cta{
-  position:fixed;right:20px;bottom:20px;background:#2563eb;
-  color:white;padding:15px 25px;border-radius:30px;
-  text-decoration:none;font-weight:bold;
-}
-
-/* DARK MODE TOGGLE */
-#toggleDark{
-  cursor:pointer;font-size:22px;margin-left:20px;
-}
-
-/* ✅ RESPONSIVE */
-@media(max-width:768px){
-  .menu{
-    display:none;
-    flex-direction:column;
-    background:white;
-    position:absolute;
-    top:65px;
-    right:20px;
-    padding:20px;
-    width:170px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    width: 170px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   }
-  .menu a{
-    margin:10px 0;
-  }
-  .hamburger{
-    display:block;
-  }
+  .menu a { margin: 10px 0; }
+  .hamburger { display: block; }
 }
-
 </style>
 </head>
 
@@ -152,93 +136,93 @@ header img{
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
   <div class="menu" id="navMenu">
-    #about">About</a>
-    #skills">Skills</a>
-    #projects">Projects</a>
-    #experience">Experience</a>
-    #contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <div id="toggleDark">🌙</div>
 </nav>
 
 <!-- ✅ HERO -->
-<header id="about" class="zoom-in">
-  yourphoto.jpg" alt="Profile Photo">
+<header id="about">
+  <img src="yourphoto.jpg" alt="Profile Photo" />
 
-  <h1 style="margin-top:12px;">Annem Venkareddy</h1>
+  <h1>Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
 
-  Resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
+  <a href="Resume.pdf" target="_blank" class="resume-btn">Download Resume</a>
 </header>
 
 <!-- ✅ SUMMARY -->
-<section class="section slide-up">
+<section class="section">
   <h2>Professional Summary</h2>
   <p>
-    Data Analyst with expertise in Power BI dashboards, SQL automation, ETL,
-    and generating insights that improve decision‑making in manufacturing operations.
+    Data Analyst with expertise in Power BI, SQL, ETL automation, and
+    generating actionable insights for manufacturing operations.
   </p>
 </section>
 
 <!-- ✅ SKILLS -->
-<section class="section fade-in" id="skills">
+<section class="section" id="skills">
   <h2>Skills</h2>
   <div class="card">✅ Power BI, DAX, KPI Dashboards</div>
-  <div class="card">✅ SQL, Power Query, Data Modeling</div>
+  <div class="card">✅ SQL, Data Modeling, Power Query</div>
   <div class="card">✅ Reporting Automation, Excel</div>
 </section>
 
 <!-- ✅ PROJECTS -->
 <section class="section" id="projects">
-  <h2 class="slide-up">Projects</h2>
+  <h2>Projects</h2>
 
-  <div class="project-card fade-in">
+  <div class="project-card">
     <h3>📊 Manufacturing Plant KPI Dashboard</h3>
-    <p>Designed dashboards for Safety, Production, Energy & Maintenance KPIs.</p>
+    <p>Built dashboards for Safety, Production, Maintenance & Energy metrics.</p>
   </div>
 
-  <div class="project-card fade-in">
+  <div class="project-card">
     <h3>🛒 Amazon Sales Dashboard</h3>
-    <p>Sales insights with SQL + Power BI using trends & city-level performance.</p>
+    <p>Sales trend, city performance & insights using SQL + Power BI.</p>
   </div>
 </section>
 
 <!-- ✅ EXPERIENCE -->
-<section class="section slide-up" id="experience">
+<section class="section" id="experience">
   <h2>Experience</h2>
 
   <div class="card">
     <h3>Business Analyst / Data Analyst — Aliaxis</h3>
     <ul>
       <li>Created Power BI dashboards for daily & monthly KPIs</li>
-      <li>Performed SQL-based ETL & Power Query transformations</li>
-      <li>Automated reporting saving 4+ hours per week</li>
+      <li>Performed SQL-based ETL and data automation</li>
+      <li>Reduced reporting time by 4+ hours weekly</li>
     </ul>
   </div>
 </section>
 
 <!-- ✅ CONTACT -->
-<section class="section fade-in" id="contact">
+<section class="section" id="contact">
   <h2>Contact</h2>
   <p>📞 6305049638</p>
   <p>📧 venkareddyannem@gmail.com</p>
-  <p>💼 YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
+  <p>💼 <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
 </section>
 
-<!-- ✅ FIXED CTA -->
-#contact" class="cta">Hire Me</a>
+<!-- ✅ FIXED CTA BUTTON -->
+<a href="#contact" class="cta">Hire Me</a>
 
 <!-- ✅ JAVASCRIPT -->
 <script>
-function toggleMenu(){
-    let menu = document.getElementById("navMenu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+function toggleMenu() {
+  const menu = document.getElementById("navMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
-document.getElementById("toggleDark").onclick = function(){
-    document.body.classList.toggle("dark");
-    this.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+document.getElementById("toggleDark").onclick = function () {
+  document.body.classList.toggle("dark");
+  this.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 };
 </script>
 
