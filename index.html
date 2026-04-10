@@ -13,6 +13,35 @@ body{
   background:#f4f6fb;
   color:#1f2937;
   scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+
+/* ANIMATIONS */
+.fade-in{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeIn 1s ease forwards;
+}
+@keyframes fadeIn{
+  to{ opacity:1; transform:none; }
+}
+
+.slide-up{
+  opacity:0;
+  transform:translateY(40px);
+  animation:slideUp 0.9s ease forwards;
+}
+@keyframes slideUp{
+  to{ opacity:1; transform:none; }
+}
+
+.zoom-in{
+  opacity:0;
+  transform:scale(0.85);
+  animation:zoomIn 0.9s ease forwards;
+}
+@keyframes zoomIn{
+  to{ opacity:1; transform:scale(1); }
 }
 
 /* NAVBAR */
@@ -46,7 +75,7 @@ header{
   background:linear-gradient(135deg,#1e40af,#60a5fa);
   color:white;
   text-align:center;
-  padding:70px 20px;   /* ✅ Smaller than your screenshot */
+  padding:70px 20px;
 }
 
 header img{
@@ -60,19 +89,10 @@ header img{
   transition:.3s;
 }
 header img:hover{
-  transform:scale(1.05);
+  transform:scale(1.06);
 }
 
-header h1{
-  font-size:28px;
-  margin:10px 0 5px;
-}
-
-header p{
-  font-size:15px;
-  opacity:0.9;
-}
-
+/* Resume Button */
 .resume-btn{
   background:#000;
   padding:12px 24px;
@@ -100,6 +120,7 @@ header p{
   border-left:5px solid #2563eb;
   padding-left:12px;
   font-size:26px;
+  margin-bottom:25px;
 }
 
 /* GLASS CARDS */
@@ -112,8 +133,20 @@ header p{
   backdrop-filter:blur(8px);
   transition:.3s;
 }
-.card:hover{
-  transform:translateY(-5px);
+
+/* ✅ PROJECT CARDS - UPGRADED */
+.project-card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  transition:.4s;
+  border:1px solid #e5e7eb;
+}
+.project-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 12px 25px rgba(0,0,0,0.12);
+  border-color:#2563eb;
 }
 
 /* CTA FIXED BUTTON */
@@ -134,13 +167,13 @@ header p{
   background:#1e3a8a;
 }
 
-/*** SMALL DEVICES FIX ***/
+/*** MOBILE FIX ***/
 @media(max-width:700px){
   header{
-    padding:50px 20px;
+    padding:40px 20px;
   }
   header img{
-    width:95px;height:95px;
+    width:90px;height:90px;
   }
   nav{
     padding:12px 20px;
@@ -152,7 +185,7 @@ header p{
 <body>
 
 <!-- ✅ NAV -->
-<nav>
+<nav class="fade-in">
   <strong style="color:#2563eb; font-size:18px;">Annem Venkareddy</strong>
 
   <div>
@@ -165,7 +198,7 @@ header p{
 </nav>
 
 <!-- ✅ HERO -->
-<header id="about">
+<header id="about" class="zoom-in">
   yourphoto.jpg
   <h1>Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
@@ -174,80 +207,64 @@ header p{
 </header>
 
 <!-- ✅ SUMMARY -->
-<section class="section">
+<section class="section slide-up">
 <h2>Professional Summary</h2>
 <p>
-Data Analyst with experience building end-to-end KPI dashboards for manufacturing operations using Power BI,
-SQL, Power Query and automated data refresh via Gateway. Skilled in trend analysis, root-cause analysis,
-and developing performance-driven visual insights for HODs and leadership.
+Data Analyst with experience in KPI dashboards, Power BI, SQL, DAX, Power Query, ETL automation,
+and data-driven decision support for manufacturing operations.
 </p>
 </section>
 
 <!-- ✅ SKILLS -->
-<section class="section" id="skills">
+<section class="section fade-in" id="skills">
 <h2>Skills</h2>
 
-<div class="card">
-<strong>Analytics & BI</strong><br>
-Power BI, DAX, KPI Dashboards, Trend & Variance Analysis
-</div>
-
-<div class="card">
-<strong>Data Engineering & ETL</strong><br>
-SQL, Power Query, Star Schema, Data Cleaning, Gateway Automation
-</div>
-
-<div class="card">
-<strong>Business & Reporting</strong><br>
-Operational KPIs, HOD Reviews, Reporting Automation
-</div>
+<div class="card">✅ Power BI, DAX, KPI Dashboards</div>
+<div class="card">✅ SQL, ETL, Star Schema, Data Cleaning</div>
+<div class="card">✅ Reporting Automation, KPI Interpretation</div>
 </section>
 
-<!-- ✅ PROJECTS -->
+<!-- ✅ PROJECTS (UPGRADED) -->
 <section class="section" id="projects">
-<h2>Projects</h2>
+<h2 class="slide-up">Projects</h2>
 
-<div class="card">
-<h3>Manufacturing Plant KPI Dashboard</h3>
-<p>
-Designed centralized dashboards combining SharePoint + SQL data covering
-Safety, Energy, Quality, Maintenance, Production and SCM.
-Used daily by HODs for decision making.
-</p>
+<div class="project-card fade-in">
+  <h3>📊 Manufacturing Plant KPI Dashboard</h3>
+  <p>
+  Connected SharePoint & SQL datasets to create safety, quality, energy, maintenance, and SCM dashboards.
+  Automated refresh with Gateway, used by HODs for daily review.
+  </p>
 </div>
 
-<div class="card">
-<h3>Amazon Sales Dashboard</h3>
-<p>
-Analyzed sales, orders, city performance and fulfillment metrics using CSV + SQL + Power BI.
-</p>
+<div class="project-card fade-in">
+  <h3>🛒 Amazon Sales Dashboard</h3>
+  <p>
+  Built analysis for orders, city performance, revenue trend, and fulfillment metrics using SQL + Power BI.
+  </p>
 </div>
 </section>
 
 <!-- ✅ EXPERIENCE -->
-<section class="section" id="experience">
+<section class="section slide-up" id="experience">
 <h2>Experience</h2>
 
 <div class="card">
 <h3>Business Analyst / Data Analyst — Aliaxis</h3>
 <ul>
 <li>Developed plant KPI dashboards in Power BI</li>
-<li>SQL + Power Query data cleaning & modeling</li>
-<li>Automated refresh via Gateway</li>
-<li>Supported leadership insights</li>
+<li>SQL + Power Query data modeling</li>
+<li>Reporting automation via Gateway</li>
+<li>Leadership support with real-time insights</li>
 </ul>
 </div>
 </section>
 
 <!-- ✅ CONTACT -->
-<section class="section" id="contact">
+<section class="section fade-in" id="contact">
 <h2>Contact</h2>
-
 <p>📞 6305049638</p>
 <p>📧 venkareddyannem@gmail.com</p>
-
-<p>
-💼 
+<p>💼 
 Your LinkedIn URL
 </p>
 </section>
