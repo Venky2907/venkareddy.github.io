@@ -7,7 +7,7 @@
 
 <style>
 
-/* RESET EVERYTHING (fixes old CSS issues) */
+/* RESET EVERYTHING */
 *{
   margin:0;
   padding:0;
@@ -73,11 +73,11 @@ nav a:hover{
   transform:translateY(-2px);
 }
 
-/* HERO SECTION (SMALLER + CLEANER) */
+/* HERO SECTION */
 header{
   background:linear-gradient(135deg,#1d4ed8,#60a5fa);
   text-align:center;
-  padding:55px 20px;   /* ✅ much smaller */
+  padding:55px 20px;
   color:white;
 }
 
@@ -94,7 +94,6 @@ header img:hover{
   transform:scale(1.08);
 }
 
-/* Resume Button */
 .resume-btn{
   background:black;
   padding:12px 24px;
@@ -124,7 +123,7 @@ header img:hover{
   margin-bottom:24px;
 }
 
-/* GLASS CARDS */
+/* CARDS */
 .card, .project-card {
   background:white;
   padding:25px;
@@ -133,7 +132,6 @@ header img:hover{
   margin-bottom:20px;
 }
 
-/* ✅ UPGRADED PROJECT CARDS */
 .project-card{
   border:1px solid #e5e7eb;
   transition:.35s;
@@ -162,34 +160,35 @@ header img:hover{
 
 <body>
 
-<!-- ✅ NAV -->
+<!-- ✅ NAVBAR -->
 <nav class="fade-in">
   <strong style="color:#2563eb;">Annem Venkareddy</strong>
 
   <div>
-    #about
-    #skills
-    #projects
-    #experience
-    #contact
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- ✅ HERO (SMALL + CLEAN + ANIMATED) -->
+<!-- ✅ HERO -->
 <header id="about" class="zoom-in">
-  yourphoto.jpg
+  <img src="yourphoto.jpg" alt="Profile Photo">
+
   <h1 style="margin-top:10px;">Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
 
-  Resume.pdf
+  <a href="Resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
 </header>
 
 <!-- ✅ SUMMARY -->
 <section class="section slide-up">
   <h2>Professional Summary</h2>
   <p>
-  Data Analyst with experience building Power BI KPI dashboards, SQL-based ETL,
-  automated reporting, and operational insights for manufacturing.
+    Data Analyst with experience building Power BI KPI dashboards, SQL-based ETL,
+    automated reporting, and operational insights for manufacturing.
   </p>
 </section>
 
@@ -201,7 +200,7 @@ header img:hover{
   <div class="card">✅ Reporting Automation</div>
 </section>
 
-<!-- ✅ PROJECTS (UPGRADED DESIGN) -->
+<!-- ✅ PROJECTS -->
 <section class="section" id="projects">
   <h2 class="slide-up">Projects</h2>
 
@@ -235,12 +234,12 @@ header img:hover{
   <h2>Contact</h2>
   <p>📞 6305049638</p>
   <p>📧 venkareddyannem@gmail.com</p>
-  <p>💼 
-Your LinkedIn URL
-</p>
+  <p>💼 <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
 </section>
 
-#contactHire Me</a>
+<!-- ✅ FIXED CTA BUTTON -->
+<a href="#contact" class="cta">Hire Me</a>
 
 </body>
 </html>
+``
