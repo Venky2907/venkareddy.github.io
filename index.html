@@ -52,14 +52,24 @@ nav{
 }
 
 /* NAV LINKS */
-nav a{
-  margin:0 12px;text-decoration:none;font-weight:600;color:#1f2937;
+.menu{
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
-nav a:hover{color:#2563eb;}
+.menu a{
+  text-decoration:none;
+  font-weight:600;
+  color:#1f2937;
+}
+.menu a:hover{color:#2563eb;}
 
 /* ✅ MOBILE MENU */
-.menu{display:flex;}
-.hamburger{display:none;cursor:pointer;font-size:28px;}
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
 
 /* HERO */
 header{
@@ -111,12 +121,23 @@ header img{
 /* ✅ RESPONSIVE */
 @media(max-width:768px){
   .menu{
-    display:none;flex-direction:column;background:white;
-    position:absolute;top:65px;right:20px;width:150px;
-    padding:15px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    display:none;
+    flex-direction:column;
+    background:white;
+    position:absolute;
+    top:65px;
+    right:20px;
+    padding:20px;
+    width:170px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
   }
-  .menu a{margin:12px 0;}
-  .hamburger{display:block;}
+  .menu a{
+    margin:10px 0;
+  }
+  .hamburger{
+    display:block;
+  }
 }
 
 </style>
@@ -131,11 +152,11 @@ header img{
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
   <div class="menu" id="navMenu">
-    #about
-    #skills
-    #projects
-    #experience
-    #contact
+    #about">About</a>
+    #skills">Skills</a>
+    #projects">Projects</a>
+    #experience">Experience</a>
+    #contact">Contact</a>
   </div>
 
   <div id="toggleDark">🌙</div>
@@ -148,7 +169,7 @@ header img{
   <h1 style="margin-top:12px;">Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
 
-  Resume.pdf">Download Resume</a>
+  Resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
 </header>
 
 <!-- ✅ SUMMARY -->
@@ -202,11 +223,11 @@ header img{
   <h2>Contact</h2>
   <p>📞 6305049638</p>
   <p>📧 venkareddyannem@gmail.com</p>
-  <p>💼 YOUR_LINKEDIN_URL">LinkedIn Profile</a></p>
+  <p>💼 YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
 </section>
 
 <!-- ✅ FIXED CTA -->
-#contact">Hire Me</a>
+#contact" class="cta">Hire Me</a>
 
 <!-- ✅ JAVASCRIPT -->
 <script>
