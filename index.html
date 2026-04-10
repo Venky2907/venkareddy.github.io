@@ -7,152 +7,116 @@
 
 <style>
 
-/* RESET EVERYTHING */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family: Arial, Helvetica, sans-serif;
   background:#f5f7fb;
   color:#1f2937;
-  scroll-behavior:smooth;
+  transition:0.3s;
+}
+
+/* ✅ DARK MODE */
+body.dark {
+  background:#0f172a;
+  color:white;
+}
+body.dark nav{
+  background:#1e293b;
+  border-bottom:1px solid #334155;
+}
+body.dark .card,
+body.dark .project-card{
+  background:#1e293b;
+  color:white;
+  border-color:#334155;
+}
+body.dark header{
+  background:linear-gradient(135deg,#0ea5e9,#3b82f6);
 }
 
 /* ANIMATIONS */
-.fade-in{
-  opacity:0;
-  animation:fadeIn 1s ease forwards;
-}
-@keyframes fadeIn{
-  to{opacity:1;}
-}
+.fade-in{opacity:0;animation:fadeIn 1s forwards;}
+@keyframes fadeIn{to{opacity:1;}}
+.slide-up{opacity:0;transform:translateY(25px);animation:slideUp 0.8s forwards;}
+@keyframes slideUp{to{opacity:1;transform:none;}}
+.zoom-in{opacity:0;transform:scale(0.85);animation:zoomIn 0.9s forwards;}
+@keyframes zoomIn{to{opacity:1;transform:scale(1);}}
 
-.slide-up{
-  opacity:0;
-  transform:translateY(40px);
-  animation:slideUp 0.9s ease forwards;
-}
-@keyframes slideUp{
-  to{opacity:1; transform:none;}
-}
-
-.zoom-in{
-  opacity:0;
-  transform:scale(0.85);
-  animation:zoomIn 0.9s ease forwards;
-}
-@keyframes zoomIn{
-  to{opacity:1; transform:scale(1);}
-}
-
-/* NAVBAR */
+/* ✅ NAVBAR */
 nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:white;
-  padding:13px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  position:sticky;top:0;z-index:100;
+  background:white;padding:15px 35px;
+  display:flex;justify-content:space-between;align-items:center;
   border-bottom:1px solid #e5e7eb;
 }
 
+/* NAV LINKS */
 nav a{
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:600;
-  color:#1f2937;
-  transition:.2s;
+  margin:0 12px;text-decoration:none;font-weight:600;color:#1f2937;
 }
-nav a:hover{
-  color:#2563eb;
-  transform:translateY(-2px);
-}
+nav a:hover{color:#2563eb;}
 
-/* HERO SECTION */
+/* ✅ MOBILE MENU */
+.menu{display:flex;}
+.hamburger{display:none;cursor:pointer;font-size:28px;}
+
+/* HERO */
 header{
   background:linear-gradient(135deg,#1d4ed8,#60a5fa);
-  text-align:center;
-  padding:55px 20px;
-  color:white;
+  padding:60px 20px;text-align:center;color:white;
 }
 
 header img{
-  width:105px;
-  height:105px;
-  border-radius:50%;
-  border:3px solid white;
-  object-fit:cover;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  transition:.3s;
-}
-header img:hover{
-  transform:scale(1.08);
+  width:120px;height:120px;border-radius:50%;
+  border:3px solid white;object-fit:cover;
 }
 
+/* BUTTONS */
 .resume-btn{
-  background:black;
-  padding:12px 24px;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:600;
-  display:inline-block;
-  margin-top:15px;
-  transition:.3s;
+  background:black;color:white;padding:12px 25px;
+  text-decoration:none;border-radius:8px;font-weight:600;
+  display:inline-block;margin-top:12px;
 }
-.resume-btn:hover{
-  background:#2563eb;
-  transform:translateY(-3px);
-}
+.resume-btn:hover{background:#2563eb;}
 
-/* SECTIONS */
 .section{
-  max-width:1100px;
-  margin:auto;
-  padding:55px 20px;
+  max-width:1100px;margin:auto;padding:55px 20px;
 }
-
 .section h2{
-  border-left:5px solid #2563eb;
-  padding-left:12px;
-  margin-bottom:24px;
+  border-left:5px solid #2563eb;padding-left:10px;margin-bottom:22px;
 }
 
-/* CARDS */
-.card, .project-card {
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 5px 18px rgba(0,0,0,0.08);
-  margin-bottom:20px;
+.card,.project-card{
+  background:white;padding:22px;border-radius:12px;margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,0.1);
 }
 
-.project-card{
-  border:1px solid #e5e7eb;
-  transition:.35s;
-}
 .project-card:hover{
-  transform:translateY(-10px) scale(1.03);
-  border-color:#2563eb;
-  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  transform:translateY(-8px);border:1px solid #2563eb;transition:0.3s;
 }
 
-/* FIXED CTA */
+/* ✅ FIXED CTA BUTTON */
 .cta{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#2563eb;
-  color:white;
-  padding:13px 22px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:700;
+  position:fixed;right:20px;bottom:20px;background:#2563eb;
+  color:white;padding:15px 25px;border-radius:30px;
+  text-decoration:none;font-weight:bold;
+}
+
+/* DARK MODE TOGGLE */
+#toggleDark{
+  cursor:pointer;font-size:22px;margin-left:20px;
+}
+
+/* ✅ RESPONSIVE */
+@media(max-width:768px){
+  .menu{
+    display:none;flex-direction:column;background:white;
+    position:absolute;top:65px;right:20px;width:150px;
+    padding:15px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  }
+  .menu a{margin:12px 0;}
+  .hamburger{display:block;}
 }
 
 </style>
@@ -161,34 +125,38 @@ header img:hover{
 <body>
 
 <!-- ✅ NAVBAR -->
-<nav class="fade-in">
+<nav>
   <strong style="color:#2563eb;">Annem Venkareddy</strong>
 
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="menu" id="navMenu">
+    #about
+    #skills
+    #projects
+    #experience
+    #contact
   </div>
+
+  <div id="toggleDark">🌙</div>
 </nav>
 
 <!-- ✅ HERO -->
 <header id="about" class="zoom-in">
-  <img src="yourphoto.jpg" alt="Profile Photo">
+  yourphoto.jpg" alt="Profile Photo">
 
-  <h1 style="margin-top:10px;">Annem Venkareddy</h1>
+  <h1 style="margin-top:12px;">Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
 
-  <a href="Resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
+  Resume.pdf">Download Resume</a>
 </header>
 
 <!-- ✅ SUMMARY -->
 <section class="section slide-up">
   <h2>Professional Summary</h2>
   <p>
-    Data Analyst with experience building Power BI KPI dashboards, SQL-based ETL,
-    automated reporting, and operational insights for manufacturing.
+    Data Analyst with expertise in Power BI dashboards, SQL automation, ETL,
+    and generating insights that improve decision‑making in manufacturing operations.
   </p>
 </section>
 
@@ -197,7 +165,7 @@ header img:hover{
   <h2>Skills</h2>
   <div class="card">✅ Power BI, DAX, KPI Dashboards</div>
   <div class="card">✅ SQL, Power Query, Data Modeling</div>
-  <div class="card">✅ Reporting Automation</div>
+  <div class="card">✅ Reporting Automation, Excel</div>
 </section>
 
 <!-- ✅ PROJECTS -->
@@ -206,12 +174,12 @@ header img:hover{
 
   <div class="project-card fade-in">
     <h3>📊 Manufacturing Plant KPI Dashboard</h3>
-    <p>Created dashboards covering Safety, Production, Energy, Maintenance, etc.</p>
+    <p>Designed dashboards for Safety, Production, Energy & Maintenance KPIs.</p>
   </div>
 
   <div class="project-card fade-in">
     <h3>🛒 Amazon Sales Dashboard</h3>
-    <p>Sales trend + city performance using SQL + Power BI.</p>
+    <p>Sales insights with SQL + Power BI using trends & city-level performance.</p>
   </div>
 </section>
 
@@ -222,9 +190,9 @@ header img:hover{
   <div class="card">
     <h3>Business Analyst / Data Analyst — Aliaxis</h3>
     <ul>
-      <li>Built KPI dashboards</li>
-      <li>SQL + Power Query data prep</li>
-      <li>Automated reporting</li>
+      <li>Created Power BI dashboards for daily & monthly KPIs</li>
+      <li>Performed SQL-based ETL & Power Query transformations</li>
+      <li>Automated reporting saving 4+ hours per week</li>
     </ul>
   </div>
 </section>
@@ -234,12 +202,24 @@ header img:hover{
   <h2>Contact</h2>
   <p>📞 6305049638</p>
   <p>📧 venkareddyannem@gmail.com</p>
-  <p>💼 <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
+  <p>💼 YOUR_LINKEDIN_URL">LinkedIn Profile</a></p>
 </section>
 
-<!-- ✅ FIXED CTA BUTTON -->
-<a href="#contact" class="cta">Hire Me</a>
+<!-- ✅ FIXED CTA -->
+#contact">Hire Me</a>
+
+<!-- ✅ JAVASCRIPT -->
+<script>
+function toggleMenu(){
+    let menu = document.getElementById("navMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+document.getElementById("toggleDark").onclick = function(){
+    document.body.classList.toggle("dark");
+    this.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+};
+</script>
 
 </body>
 </html>
-``
