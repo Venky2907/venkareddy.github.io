@@ -6,126 +6,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+/* GLOBAL */
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#f6f8fb;
+  background:#f4f6fb;
   color:#1f2937;
   scroll-behavior:smooth;
 }
 
-/* NAV */
+/* NAVBAR */
 nav{
-  position:sticky; 
-  top:0; 
-  z-index:100;
-  background:#fff;
-  padding:12px 40px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  padding:15px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-shadow:0 2px 15px rgba(0,0,0,0.05);
 }
+
 nav a{
-  margin:0 14px;
+  margin:0 15px;
   text-decoration:none;
   font-weight:600;
   color:#1f2937;
+  transition:0.25s;
 }
-nav a:hover{color:#2563eb}
+nav a:hover{
+  color:#2563eb;
+  transform:translateY(-2px);
+}
 
-/* HERO */
+/* HERO SECTION */
 header{
-  background:linear-gradient(135deg,#2563eb,#60a5fa);
-  color:#fff;
+  background:linear-gradient(135deg,#1e40af,#60a5fa);
+  color:white;
   text-align:center;
-  padding:50px 20px;
+  padding:70px 20px;   /* ✅ Smaller than your screenshot */
 }
+
 header img{
-  width:130px; 
-  height:130px;
-  border-radius:50%;
-  border:3px solid #fff;
+  width:110px;
+  height:110px;
   object-fit:cover;
+  border-radius:50%;
+  border:3px solid white;
+  margin-bottom:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  transition:.3s;
 }
+header img:hover{
+  transform:scale(1.05);
+}
+
+header h1{
+  font-size:28px;
+  margin:10px 0 5px;
+}
+
+header p{
+  font-size:15px;
+  opacity:0.9;
+}
+
 .resume-btn{
-  display:inline-block;
-  margin-top:20px;
   background:#000;
-  color:#fff;
-  padding:12px 20px;
+  padding:12px 24px;
   border-radius:6px;
+  color:white;
   font-weight:600;
   text-decoration:none;
+  display:inline-block;
+  margin-top:18px;
+  transition:.3s;
+}
+.resume-btn:hover{
+  background:#2563eb;
+  transform:translateY(-3px);
 }
 
-/* SECTIONS */
+/* SECTION BASE */
 .section{
   max-width:1100px;
   margin:auto;
-  padding:55px 20px;
+  padding:60px 20px;
 }
+
 .section h2{
   border-left:5px solid #2563eb;
   padding-left:12px;
+  font-size:26px;
 }
 
-/* CARDS */
+/* GLASS CARDS */
 .card{
-  background:#fff;
-  padding:26px;
+  background:rgba(255,255,255,0.75);
+  padding:25px;
   border-radius:14px;
-  margin-bottom:28px;
+  margin-bottom:25px;
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  backdrop-filter:blur(8px);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
 }
 
-/* CTA BUTTON */
+/* CTA FIXED BUTTON */
 .cta{
   position:fixed;
-  right:22px; 
+  right:22px;
   bottom:22px;
   background:#2563eb;
-  color:#fff;
+  color:white;
   padding:14px 20px;
   border-radius:30px;
-  font-weight:700;
   text-decoration:none;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  font-weight:700;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+.cta:hover{
+  background:#1e3a8a;
+}
+
+/*** SMALL DEVICES FIX ***/
+@media(max-width:700px){
+  header{
+    padding:50px 20px;
+  }
+  header img{
+    width:95px;height:95px;
+  }
+  nav{
+    padding:12px 20px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ✅ NAVIGATION FIXED -->
+<!-- ✅ NAV -->
 <nav>
-  <strong style="color:#2563eb">Annem Venkareddy</strong>
+  <strong style="color:#2563eb; font-size:18px;">Annem Venkareddy</strong>
+
   <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+    #about
+    #skills
+    #projects
+    #experience
+    #contact
   </div>
 </nav>
 
-<!-- ✅ ABOUT SECTION -->
+<!-- ✅ HERO -->
 <header id="about">
-  <img src="yourphoto.jpg" alt="Profile Photo">
+  yourphoto.jpg
   <h1>Annem Venkareddy</h1>
   <p>Data Analyst | Power BI | SQL | Python</p>
 
-  <!-- Resume Button -->
-  <a class="resume-btn" href="Resume.pdf" download>Download Resume</a>
+  Resume.pdf
 </header>
 
-<!-- ✅ PROFESSIONAL SUMMARY -->
+<!-- ✅ SUMMARY -->
 <section class="section">
 <h2>Professional Summary</h2>
 <p>
-Data Analyst with hands-on experience building end-to-end Power BI solutions for manufacturing operations.
-Designed centralized KPI dashboards covering Safety, Energy, Quality, Production, Maintenance, SCM, and Procurement.
-Strong expertise in SQL, Power Query ETL automation, star-schema modeling, advanced DAX, and Power BI Gateway.
+Data Analyst with experience building end-to-end KPI dashboards for manufacturing operations using Power BI,
+SQL, Power Query and automated data refresh via Gateway. Skilled in trend analysis, root-cause analysis,
+and developing performance-driven visual insights for HODs and leadership.
 </p>
 </section>
 
@@ -135,17 +189,17 @@ Strong expertise in SQL, Power Query ETL automation, star-schema modeling, advan
 
 <div class="card">
 <strong>Analytics & BI</strong><br>
-Power BI, DAX, KPI Design, Dashboards, Trend Analysis, RCA
+Power BI, DAX, KPI Dashboards, Trend & Variance Analysis
 </div>
 
 <div class="card">
 <strong>Data Engineering & ETL</strong><br>
-SQL, Power Query, Star Schema, Data Cleaning, Power BI Gateway
+SQL, Power Query, Star Schema, Data Cleaning, Gateway Automation
 </div>
 
 <div class="card">
 <strong>Business & Reporting</strong><br>
-Operational KPIs, HOD Reviews, Reporting Automation, Stakeholder Communication
+Operational KPIs, HOD Reviews, Reporting Automation
 </div>
 </section>
 
@@ -154,19 +208,18 @@ Operational KPIs, HOD Reviews, Reporting Automation, Stakeholder Communication
 <h2>Projects</h2>
 
 <div class="card">
-<h3>Plant-Level KPI Dashboard (Manufacturing)</h3>
+<h3>Manufacturing Plant KPI Dashboard</h3>
 <p>
-Built centralized Power BI dashboards integrating Excel/SharePoint data to monitor all key functions:
-Safety, Energy, Quality, Production, Maintenance, SCM, Procurement.
-Used by HODs for daily decision-making.
+Designed centralized dashboards combining SharePoint + SQL data covering
+Safety, Energy, Quality, Maintenance, Production and SCM.
+Used daily by HODs for decision making.
 </p>
 </div>
 
 <div class="card">
 <h3>Amazon Sales Dashboard</h3>
 <p>
-Developed analytics dashboard using Amazon sales CSV, SQL preprocessing, and Power BI.
-Analyzed sales, order status, and city-level performance.
+Analyzed sales, orders, city performance and fulfillment metrics using CSV + SQL + Power BI.
 </p>
 </div>
 </section>
@@ -176,12 +229,12 @@ Analyzed sales, order status, and city-level performance.
 <h2>Experience</h2>
 
 <div class="card">
-<h3>Business Analyst / Data Analyst – Aliaxis</h3>
+<h3>Business Analyst / Data Analyst — Aliaxis</h3>
 <ul>
-<li>Developed plant-level Power BI dashboards</li>
-<li>Cleaned & prepared data using SQL + Power Query</li>
-<li>Automated reporting using Power BI Gateway</li>
-<li>Supported HOD & leadership decision-making</li>
+<li>Developed plant KPI dashboards in Power BI</li>
+<li>SQL + Power Query data cleaning & modeling</li>
+<li>Automated refresh via Gateway</li>
+<li>Supported leadership insights</li>
 </ul>
 </div>
 </section>
@@ -189,19 +242,17 @@ Analyzed sales, order status, and city-level performance.
 <!-- ✅ CONTACT -->
 <section class="section" id="contact">
 <h2>Contact</h2>
+
 <p>📞 6305049638</p>
 <p>📧 venkareddyannem@gmail.com</p>
 
 <p>
 💼 
-<a href="https://www.linkedin.com/in/venkareddy-annem-59552524b/" target="_blank">
-LinkedIn Profile
-</a>
+Your LinkedIn URL
 </p>
 </section>
 
-<!-- ✅ FLOATING CTA BUTTON -->
-<a class="cta" href="#contact">Hire Me</a>
+#contactHire Me</a>
 
 </body>
 </html>
