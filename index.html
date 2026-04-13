@@ -1,144 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Annem Venkareddy | Data Analyst</title>
-
-<!-- ✅ GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family: 'Poppins', sans-serif;
-  background:#f4f4ff;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f5f5ff;
   color:#222;
-  transition:0.4s ease;
+  transition:0.3s;
 }
 
 /* DARK MODE */
 body.dark{background:#0a0a14;color:white;}
 body.dark nav{background:#1a1a2e;border-bottom:1px solid #333;}
-body.dark .glass-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);}
-body.dark .project-row{background:rgba(255,255,255,0.05);}
-body.dark header{background:linear-gradient(135deg,#5a00ff,#3b82f6);}
-body.dark .resume-btn{background:#8b5cf6;}
+body.dark .card,body.dark .project-row{
+  background:#1a1a2e;
+  border-color:#333;
+}
+body.dark h2{color:#d0b3ff;}
 body.dark .cta{background:#9b5cff;}
+body.dark .menu a{color:white;}
+body.dark .menu a:hover{color:#b388ff;}
+body.dark header{
+  background:linear-gradient(135deg,#5a00ff,#c77dff);
+}
+
+/* PURPLE NEON THEME */
+:root{
+  --primary:#8b5cf6;
+  --primary-glow:#c084fc;
+  --dark:#1a1a2e;
+}
 
 /* NAVBAR */
 nav{
-  position:sticky; top:0; z-index:999;
-  background:white; padding:18px 40px;
-  display:flex; justify-content:space-between; align-items:center;
-  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:white;
+  padding:15px 35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ddd;
 }
-nav strong{font-size:1.4rem;}
-.menu{display:flex;gap:30px;}
+.menu{display:flex;gap:25px;}
 .menu a{
-  color:#222;text-decoration:none;font-weight:500;
-  padding-bottom:3px; transition:0.3s;
+  color:#222;
+  text-decoration:none;
+  font-weight:600;
 }
-.menu a:hover{color:#6D28D9;border-bottom:2px solid #6D28D9;}
+.menu a:hover{color:var(--primary);}
 .hamburger{display:none;font-size:28px;cursor:pointer;}
-#toggleDark{cursor:pointer;font-size:24px;}
+#toggleDark{cursor:pointer;font-size:22px;}
 
-/* HERO SECTION */
+/* HERO */
 header{
-  background:linear-gradient(135deg,#6D28D9,#3B82F6);
-  padding:70px 20px; text-align:center; color:white;
+  background:linear-gradient(135deg,#7c3aed,#c084fc);
+  padding:40px 20px;
+  text-align:center;
+  color:white;
 }
 header img{
-  width:150px;height:150px;border-radius:50%;
-  border:5px solid white; object-fit:cover;
-  box-shadow:0 0 35px rgba(255,255,255,0.5),0 0 70px rgba(109,40,217,0.5);
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:4px solid white;
+  object-fit:cover;
 }
 
 /* RESUME BUTTON */
 .resume-btn{
-  background:white;color:#3B28D9;padding:12px 35px;
-  border-radius:50px;display:inline-block;margin-top:25px;
-  font-weight:600;transition:0.3s;text-decoration:none;
+  background:black;
+  color:white;
+  padding:12px 30px;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  margin-top:25px;
+  display:inline-block;
+  transition:0.3s;
 }
-.resume-btn:hover{background:#8b5cf6;color:white;}
+.resume-btn:hover{
+  background:var(--primary);
+  box-shadow:0 0 12px var(--primary-glow),0 0 25px var(--primary);
+  transform:translateY(-3px);
+}
 
 /* SECTIONS */
 .section{
-  max-width:1150px;margin:auto;padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
 }
 .section h2{
-  font-size:2rem;margin-bottom:28px;
-  border-left:6px solid #6D28D9;padding-left:12px;font-weight:600;
-}
-
-/* GLASS CARD */
-.glass-card{
-  background:rgba(255,255,255,0.55);
-  border-radius:16px;padding:30px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.1);
-  backdrop-filter:blur(12px);
+  border-left:5px solid var(--primary);
+  padding-left:10px;
   margin-bottom:25px;
+  font-size:1.8rem;
 }
 
-/* SKILL ICONS */
-.skill-icon-box img{
-  width:58px;height:58px;margin-bottom:8px;
-  filter:drop-shadow(0 3px 5px rgba(0,0,0,0.15));
+/* CARDS */
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,0.08);
 }
 
-/* PROJECT CARDS */
+/* PROJECT ROW */
 .project-row{
-  display:flex;gap:25px;
-  background:rgba(255,255,255,0.45);
-  backdrop-filter:blur(10px);
-  padding:25px;border-radius:16px;margin-bottom:30px;
+  display:flex;
+  gap:20px;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,0.08);
+  transition:0.3s;
 }
-.project-img{width:230px;height:145px;border-radius:14px;object-fit:cover;background:#eee;}
+.project-row:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.project-img {
+  width: 200px;
+  height: 130px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
 
-/* BUTTON */
+/* READ MORE BUTTON */
 .read-more{
-  background:#6D28D9;color:white;border:none;
-  padding:10px 22px;border-radius:8px;cursor:pointer;
-  font-weight:600;transition:0.3s;
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:10px;
+  transition:0.3s;
+}
+.read-more:hover{
+  background:#6d28d9;
 }
 
 /* MODAL */
-.modal{display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,0.65);z-index:9999;backdrop-filter:blur(6px);}
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+}
 .modal-content{
-  background:white;width:78%;max-height:85vh;
-  overflow-y:auto;margin:5% auto;padding:40px;
-  border-radius:20px;
+  background:white;
+  width:70%;
+  margin:10% auto;
+  padding:25px;
+  border-radius:12px;
 }
-.close{float:right;font-size:32px;cursor:pointer;}
-
-/* BADGES */
-.badge{
-  display:inline-block;padding:7px 16px;margin:6px;
-  background:linear-gradient(135deg,#6D28D9,#3B82F6);
-  color:white;border-radius:20px;font-weight:600;
-}
-
-/* GRID */
-.grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;margin:18px 0;
-}
-.grid-item{
-  background:#e5e5ff;padding:45px 10px;border-radius:10px;
-  text-align:center;border:2px dashed #6D28D9;
+.close{
+  float:right;
+  font-size:28px;
+  cursor:pointer;
 }
 
-/* CTA */
+/* CTA BUTTON */
 .cta{
-  position:fixed;bottom:25px;right:25px;
-  background:linear-gradient(135deg,#6D28D9,#3B82F6);
-  padding:16px 28px;border-radius:35px;
-  color:white;text-decoration:none;
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:var(--primary);
+  padding:15px 25px;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
 }
 
+/* MOBILE */
+@media(max-width:768px){
+  .project-row{flex-direction:column;text-align:center;}
+  .project-img{margin:auto;}
+  .menu{
+    display:none;
+    flex-direction:column;
+    background:white;
+    position:absolute;
+    top:70px;
+    right:20px;
+    padding:20px;
+    border-radius:10px;
+    width:200px;
+  }
+  .hamburger{display:block;}
+}
+.project-row p {
+  margin: 6px 0;
+}
+
+.project-row h3 {
+  margin-bottom: 6px;
+}
+
+.modal-content h3 {
+  margin-top: 20px;
+  color: var(--primary);
+}
+
+.modal-content p, .modal-content ul li {
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+  /* ✅ Modal text spacing improvement */
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.modal-content ul {
+  margin-left: 20px;
+}
+
+.modal-content ul li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.modal-content p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+  /* ✅ Modal size & scroll fix */
+.modal-content {
+  width: 75%;
+  max-height: 85vh;
+  overflow-y: auto;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+/* ✅ Project Card Spacing & Alignment Fix */
+.project-row {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  align-items: center;
+}
+
+.project-row img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.project-row div {
+  flex: 1;
+}
+  /* ✅ Tool Badges */
+.badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 6px 14px;
+  margin: 6px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ✅ Screenshot Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.grid-item {
+  background: #eaeaea;
+  padding: 40px 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ✅ Modal Animations */
+.fade-modal {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(40px);}
+  to {transform: translateY(0);}
+}
+  /* ✅ Tool Badges */
+.badge {
+  display:inline-block;
+  padding:6px 14px;
+  margin:5px;
+  background:var(--primary);
+  color:white;
+  border-radius:20px;
+  font-weight:600;
+  font-size:0.85rem;
+}
+
+/* ✅ Screenshot Grid */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:15px 0;
+}
+.grid-item {
+  background:#eaeaea;
+  padding:35px 8px;
+  border-radius:8px;
+  text-align:center;
+  font-weight:600;
+}
+
+/* ✅ Modal Animation */
+.fade-modal {
+  animation:fadeIn 0.3s ease-in-out;
+}
+.slide-up {
+  animation:slideUp 0.35s ease;
+}
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+@keyframes slideUp {
+  from {transform:translateY(40px);}
+  to {transform:translateY(0);}
+}
 </style>
 </head>
 
@@ -146,7 +371,7 @@ header img{
 
 <!-- ✅ NAVBAR -->
 <nav>
-  <strong>Annem Venkareddy</strong>
+  <strong style="color:var(--primary); font-size:1.2rem;">Annem Venkareddy</strong>
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
@@ -163,47 +388,49 @@ header img{
 
 <!-- ✅ HERO -->
 <header id="about">
-  <img src="yourphoto.jpg">
-  <h1 style="margin-top:18px;font-size:2.6rem;font-weight:700;">Annem Venkareddy</h1>
-  <p style="font-size:1.2rem;margin-top:10px;">Data Analyst • Power BI • SQL • Python</p>
+  <img src="yourphoto.jpg" alt="Profile Photo" />
+  <h1 style="margin-top:15px;font-size:2.3rem;font-weight:700;">Annem Venkareddy</h1>
+  <p style="font-size:1.1rem;margin-top:8px;">Data Analyst | BI Analyst | Power BI | SQL | Python</p>
+
   <a href="Resume.pdf" target="_blank" class="resume-btn">⬇ Download Resume</a>
 </header>
 
-<!-- ✅ SKILLS ICONS -->
+<!-- ✅ SKILLS ICON ROW -->
 <section class="section" style="text-align:center;">
-  <div style="display:flex;justify-content:center;gap:55px;flex-wrap:wrap;">
-
-    <div class="skill-icon-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+  <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+    
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" width="60">
       <p><strong>Power BI</strong></p>
     </div>
 
-    <div class="skill-icon-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png">
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="60">
       <p><strong>SQL</strong></p>
     </div>
 
-    <div class="skill-icon-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png">
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="60">
       <p><strong>Python</strong></p>
     </div>
 
-    <div class="skill-icon-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png">
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" width="60">
       <p><strong>Excel</strong></p>
     </div>
-
   </div>
 </section>
 
 <!-- ✅ SUMMARY -->
 <section class="section" id="summary">
   <h2>Professional Summary</h2>
-  <div class="glass-card">
-    <p style="font-size:1.15rem;line-height:1.8;">
-    I am a Data Analyst specializing in Power BI, SQL, Python and Power Query. I design automated dashboards,
-    data models, and ETL pipelines that turn raw data into actionable insights.
-    </p>
+  <div class="card">
+    <p style="font-size:1.1rem;line-height:1.7;">
+I am a Data Analyst specializing in building end‑to‑end BI systems using Power BI, SQL, Python, and Power Query.
+I design automated dashboards, data models, and ETL pipelines that convert raw datasets into clear insights
+for leadership decision‑making. My work focuses on creating scalable KPI systems, forecasting models, and
+high‑quality reporting solutions used across multiple departments.
+</p> 
   </div>
 </section>
 
@@ -211,65 +438,243 @@ header img{
 <section class="section" id="skills">
   <h2>Skills</h2>
 
-  <div class="glass-card">
+  <div class="card">
     <h3>⭐ Technical Skills</h3><br>
     <ul style="line-height:1.9;">
-      <li>Power BI — DAX, dashboards, automation</li>
-      <li>SQL — Joins, CTEs, window functions</li>
-      <li>Python — Pandas, NumPy, forecasting</li>
-      <li>Excel — Dashboards, formulas</li>
-      <li>Power Query — ETL, data cleaning</li>
+      <li><strong>Power BI</strong> — DAX, KPI dashboards, star schema, refresh automation</li>
+      <li><strong>SQL</strong> — Joins, CTEs, window functions, ETL pipelines</li>
+      <li><strong>Python</strong> — Pandas, NumPy, anomaly detection</li>
+      <li><strong>Excel</strong> — Pivot Tables, XLOOKUP, dashboards</li>
+      <li><strong>Power Query</strong> — Transformations, data quality</li>
     </ul>
   </div>
 
-  <div class="glass-card">
+  <div class="card">
     <h3>⭐ Analytics & Business Skills</h3><br>
-    <ul style="line-height:1.9;">
-      <li>KPI Analysis & Insights</li>
-      <li>Forecasting & Anomaly Detection</li>
-      <li>Requirement Gathering</li>
-      <li>Business Case, ROI & Payback</li>
-    </ul>
+<ul style="line-height:1.9;">
+  <li>KPI Analysis, Trend Analysis, Variance Insights</li>
+  <li>Requirement Gathering & Documentation</li>
+  <li>Forecasting & Anomaly Detection (Python)</li>
+  <li>Data Modeling & Transformation (SQL + Power Query)</li>
+  <li>Business Case, ROI & Payback Calculations</li>
+</ul>
   </div>
 </section>
 
-<!-- ✅ EXPERIENCE -->
+<!-- ✅ PREMIUM PROJECTS SECTION -->
+<section class="section" id="projects">
+  <h2>Projects</h2>
+
+  <!-- ✅ PROJECT 1 CARD -->
+  <div class="project-row">
+    <img src="https://i.postimg.cc/8P7GFTGd/bi-dashboard.jpg" class="project-img">
+
+    <div>
+      <h3>📊 Manufacturing KPI Intelligence System</h3>
+      <p>Enterprise-grade KPI system using SQL + Power Query + Power BI with fully automated ETL & 30+ KPI measures.</p>
+      <br>
+      <button class="read-more" onclick="openModal('modal1')">Read More</button>
+    </div>
+  </div>
+
+  <!-- ✅ PROJECT 2 CARD -->
+  <div class="project-row">
+    <img src="https://i.postimg.cc/B6G1tSmN/ecommerce-dashboard.jpg" class="project-img">
+
+    <div>
+      <h3>🛒 Amazon Sales Analytics & Forecasting</h3>
+      <p>Python + SQL + Power BI project for forecasting, churn detection & sales trend analysis.</p>
+      <br>
+      <button class="read-more" onclick="openModal('modal2')">Read More</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- ✅ PROJECT 1 POPUP – PREMIUM VERSION -->
+<div id="modal1" class="modal fade-modal">
+  <div class="modal-content slide-up">
+
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+
+    <h2 style="font-size:2rem;font-weight:700;">📊 Manufacturing KPI Intelligence System</h2>
+
+    <h3>✅ Project Overview</h3>
+    <p>
+      This end‑to‑end BI platform integrates SQL Server, Power Query and Power BI to automate KPI reporting across Production,
+      Quality, Maintenance and Supply Chain. It provides real‑time insights and eliminates manual analysis work.
+    </p>
+
+    <h3>✅ Architecture</h3>
+    <p style="line-height:1.9;">
+      <strong>SharePoint + Excel + CSV</strong> →  
+      <strong>SQL Cleaning & Validation</strong> →  
+      <strong>Power Query ETL</strong> →  
+      <strong>Star Schema Modeling</strong> →  
+      <strong>DAX KPIs</strong> →  
+      <strong>Power BI Dashboards</strong> →  
+      <strong>Gateway Auto‑Refresh</strong>
+    </p>
+
+    <h3>✅ Key Features</h3>
+    <ul>
+      <li>Automated SQL cleaning & normalization</li>
+      <li>Power Query ETL with data validation layers</li>
+      <li>Enterprise-grade KPI model (OEE, OTIF, MTTR, Quality %, Efficiency)</li>
+      <li>Interactive visuals for trend analysis & deep drill downs</li>
+      <li>Scheduled refresh with refresh monitoring alerts</li>
+    </ul>
+
+    <h3>✅ Technology Stack</h3>
+    <div class="badge-row">
+      <span class="badge">SQL Server</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Power Query</span>
+      <span class="badge">DAX</span>
+      <span class="badge">SharePoint</span>
+    </div>
+
+    <h3>✅ Screenshot Gallery</h3>
+    <div class="grid">
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+    </div>
+
+    <h3>✅ Key Outcomes / Impact</h3>
+    <ul>
+      <li>Reduced manual reporting by <strong>12+ hours per week</strong></li>
+      <li>Standardized KPI logic across the entire plant</li>
+      <li>Improved decision-making speed for leadership</li>
+      <li>Early detection of performance deviations</li>
+    </ul>
+
+    <h3>✅ About This Project</h3>
+    <p>
+      This BI system demonstrates expertise in SQL ETL, data modeling, business KPI creation, automation and dynamic BI dashboards.
+      It is used daily for operational excellence and leadership review meetings.
+    </p>
+
+  </div>
+</div>
+
+<!-- ✅ PROJECT 2 POPUP – PREMIUM VERSION -->
+<div id="modal2" class="modal fade-modal">
+  <div class="modal-content slide-up">
+
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+
+    <h2 style="font-size:2rem;font-weight:700;">🛒 Amazon Sales Analytics & Forecasting</h2>
+
+    <h3>✅ Project Overview</h3>
+    <p>
+      A complete data analytics pipeline designed to analyze Amazon sales performance, profitability,
+      customer behavior and forecast demand using Python, SQL and Power BI.
+    </p>
+
+    <h3>✅ Architecture</h3>
+    <p style="line-height:1.9;">
+      <strong>Python Cleaning</strong> →  
+      <strong>SQL Fact‑Dimension Modeling</strong> →  
+      <strong>Power BI Dashboard</strong> →  
+      <strong>DAX KPIs</strong> →  
+      <strong>Prophet/ARIMA Forecasting</strong> →  
+      <strong>Anomaly Detection</strong>
+    </p>
+
+    <h3>✅ Key Features</h3>
+    <ul>
+      <li>Pandas-based cleaning & preprocessing</li>
+      <li>Customer, category & product-level analysis</li>
+      <li>Demand forecasting for 30‑days ahead</li>
+      <li>Anomaly detection using Z-score & rolling deviation</li>
+      <li>Profitability & region analytics dashboards</li>
+    </ul>
+
+    <h3>✅ Technology Stack</h3>
+    <div class="badge-row">
+      <span class="badge">Python</span>
+      <span class="badge">Pandas</span>
+      <span class="badge">NumPy</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">SQL</span>
+      <span class="badge">Matplotlib</span>
+    </div>
+
+    <h3>✅ Screenshot Gallery</h3>
+    <div class="grid">
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+    </div>
+
+    <h3>✅ Key Outcomes / Impact</h3>
+    <ul>
+      <li>Improved forecast accuracy for business planning</li>
+      <li>Identified sales anomalies & product performance issues</li>
+      <li>Accelerated insights for marketing & stocking decisions</li>
+      <li>Delivered concise visual storytelling for leadership</li>
+    </ul>
+
+    <h3>✅ About This Project</h3>
+    <p>
+      This project demonstrates real-world data engineering, forecasting, anomaly detection, analytics storytelling and BI dashboarding—
+      highly relevant for Data Analyst, BI Analyst, Product Analyst & eCommerce Analyst roles.
+    </p>
+
+  </div>
+</div>  
+  
+  <!-- ✅ EXPERIENCE -->
 <section class="section" id="experience">
   <h2>Experience</h2>
 
-  <div class="glass-card">
-    <h3>Business Intelligence Analyst</h3>
-    <p><strong>Aliaxis</strong> — Nov 2024 to Present</p>
+  <div class="card">
+    <h3>Business Intelligence Analyst (Data Engineering & Reporting)</h3>
+<p><strong>Aliaxis</strong> — Nov 2024 to Present</p>
 
     <h3>⭐ Data Analytics & Reporting</h3>
-    <ul><li>Power BI dashboards with 30+ DAX KPIs</li></ul><br>
+<ul style="line-height:1.9;">
+  <li>Developed interactive Power BI dashboards with 30+ DAX measures for leadership reporting.</li>
+  <li>Created automated KPI views using star-schema modeling and optimized data relationships.</li>
+  <li>Built reusable templates and visuals for trends, variances, and forecasting insights.</li>
+</ul><br>
 
-    <h3>⭐ Data Engineering & ETL</h3>
-    <ul><li>SQL pipelines + Power Query</li></ul><br>
+   <h3>⭐ Data Engineering & ETL</h3>
+<ul style="line-height:1.9;">
+  <li>Developed SQL-based ETL pipelines integrating SharePoint, Excel & CSV sources.</li>
+  <li>Created Power Query transformation layers for data cleaning and standardization.</li>
+  <li>Designed star-schema data models improving report refresh speed and accuracy.</li>
+</ul><br>
+
 
     <h3>⭐ Analytics & Insights</h3>
-    <ul><li>Trend analysis + forecasting</li></ul><br>
+<ul style="line-height:1.9;">
+  <li>Analyzed KPI trends, patterns, and variances to support data‑driven decisions.</li>
+  <li>Built Python‑based forecasting and anomaly detection logic for proactive insights.</li>
+</ul><br>
 
-    <h3>⭐ Business Collaboration</h3>
-    <ul><li>Cross-functional data work</li></ul>
+    <h3>⭐ Business & Stakeholder Collaboration</h3>
+<ul style="line-height:1.9;">
+  <li>Worked with cross‑functional teams to gather reporting requirements and translate them into BI dashboards.</li>
+  <li>Standardized KPI definitions and reporting logic across departments to ensure data consistency.</li>
+  <li>Prepared business cases and ROI insights for management using data-driven analysis.</li>
+</ul><br>
   </div>
 </section>
 
 <!-- ✅ CONTACT -->
 <section class="section" id="contact">
   <h2>Contact</h2>
-  <div class="glass-card" style="font-size:1.2rem;">
-    <p>📞 6305049638</p>
-    <p>📧 venkareddyannem@gmail.com</p>
-    <p>💼 <a href="https://linkedin.com/in/venkareddy-annem-59552524b" target="_blank">LinkedIn</a></p>
-    <p>👨‍💻 <a href="https://github.com/venky2907" target="_blank">GitHub</a></p>
-  </div>
+  <p>📞 6305049638</p>
+  <p>📧 venkareddyannem@gmail.com</p>
+  <p>💼 <a href="https://www.linkedin.com/in/venkareddy-annem-59552524b" target="_blank">LinkedIn Profile</a></p>
+  <p>👨‍💻 <a href="https://github.com/venky2907" target="_blank">GitHub Portfolio</a></p>
 </section>
 
 <!-- ✅ CTA -->
 <a href="#contact" class="cta">Contact Me</a>
-
-<!-- ✅ JS -->
+<!-- ✅ JAVASCRIPT -->
 <script>
 function toggleMenu(){
   const m=document.getElementById("navMenu");
@@ -279,9 +684,15 @@ document.getElementById("toggleDark").onclick=function(){
   document.body.classList.toggle("dark");
   this.textContent=document.body.classList.contains("dark")?"☀️":"🌙";
 };
-function openModal(id){document.getElementById(id).style.display="block";}
-function closeModal(id){document.getElementById(id).style.display="none";}
+
+function openModal(id){
+  document.getElementById(id).style.display="block";
+}
+function closeModal(id){
+  document.getElementById(id).style.display="none";
+}
 </script>
 
 </body>
 </html>
+``
