@@ -131,12 +131,12 @@ header img{
   transform:translateY(-5px);
   box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
-.project-img{
-  width:180px;
-  height:110px;
-  border-radius:10px;
-  object-fit:cover;
-  background:#ddd;
+.project-img {
+  width: 200px;
+  height: 130px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #f0f0f0;
 }
 
 /* READ MORE BUTTON */
@@ -205,7 +205,77 @@ header img{
   }
   .hamburger{display:block;}
 }
+.project-row p {
+  margin: 6px 0;
+}
 
+.project-row h3 {
+  margin-bottom: 6px;
+}
+
+.modal-content h3 {
+  margin-top: 20px;
+  color: var(--primary);
+}
+
+.modal-content p, .modal-content ul li {
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+  /* ✅ Modal text spacing improvement */
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.modal-content ul {
+  margin-left: 20px;
+}
+
+.modal-content ul li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.modal-content p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+  /* ✅ Modal size & scroll fix */
+.modal-content {
+  width: 75%;
+  max-height: 85vh;
+  overflow-y: auto;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+/* ✅ Project Card Spacing & Alignment Fix */
+.project-row {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  align-items: center;
+}
+
+.project-row img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.project-row div {
+  flex: 1;
+}
 </style>
 </head>
 
@@ -307,58 +377,161 @@ high‑quality reporting solutions used across multiple departments.
 <section class="section" id="projects">
   <h2>Projects</h2>
 
+ 
+ <!-- ✅ PROJECTS SECTION -->
+<section class="section" id="projects">
+  <h2>Projects</h2>
+
+  <!-- ✅ PROJECT 1 CARD -->
   <div class="project-row">
-    <img src="https://i.postimg.cc/zf6Wm0Bq/powerbi-thumbnail.jpg" class="project-img">
+    <img src="https://i.postimg.cc/8P7GFTGd/bi-dashboard.jpg" class="project-img">
+
     <div>
       <h3>📊 Manufacturing KPI Intelligence System</h3>
-<p>End-to-end BI system using SQL, Power Query & Power BI with automated refresh and DAX-based KPIs.</p>
-      <p><a href="#" target="_blank">🔗 View on GitHub</a></p>
-      p><a href="https://github.com/Venky2907/venkareddy.github.io/tree/main/Manufacturing-KPI-Intelligence-System" target="_blank">🔗 View on GitHub</a></p>
+      <p>End‑to‑end BI system with SQL ETL, Power Query, DAX & automated refresh for Production, Quality, SCM & Maintenance teams.</p>
+      <br>
       <button class="read-more" onclick="openModal('modal1')">Read More</button>
     </div>
   </div>
 
+  <!-- ✅ PROJECT 2 CARD -->
   <div class="project-row">
-    <img src="https://i.postimg.cc/Wb2q
+    <img src="https://i.postimg.cc/B6G1tSmN/ecommerce-dashboard.jpg" class="project-img">
+
     <div>
-      <h3>🛒 Amazon Sales Intelligence & Forecasting</h3>
-<p>Python + SQL + Power BI project with forecasting, anomaly detection & profitability insights.</p>
-      <p><a href="#" target="_blank">🔗 View on GitHub</a></p>
-    p><a href="https://github.com/Venky2907/venkareddy.github.io/tree/main/Amazon-Sales-Analytics-Forecasting" target="_blank">🔗 View on GitHub</a></p>
+      <h3>🛒 Amazon Sales Analytics & Forecasting</h3>
+      <p>Python + SQL + Power BI workflow for trend analysis, profitability insights, anomaly detection & 30‑day forecasting.</p>
+      <br>
       <button class="read-more" onclick="openModal('modal2')">Read More</button>
     </div>
   </div>
 
- 
 </section>
 
-<!-- ✅ MODALS -->
+<!-- ✅ POPUP FOR PROJECT 1 -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <h2>Manufacturing KPI Dashboard</h2>
-   <p>
-A complete BI system integrating SQL Server, SharePoint and Excel sources into a unified KPI platform.
-Includes SQL-based data cleaning, Power Query ETL, star-schema modeling, 30+ DAX measures and automated
-gateway refresh. Dashboards provide daily insights for Production, Quality, SCM and Maintenance teams.
-</p>
+
+    <h2>📊 Manufacturing KPI Intelligence System</h2>
+
+    <h3>✅ Project Overview</h3>
+    <p>
+      A complete end-to-end BI system that unifies multi-source manufacturing data into an
+      automated KPI reporting platform. This system provides leadership with real-time insights
+      across Production, Quality, SCM and Maintenance.
+    </p>
+
+    <h3>✅ Architecture</h3>
+    <p>
+      SharePoint + Excel + CSV → SQL Cleaning → Power Query ETL → Star Schema →
+      DAX KPIs → Power BI Dashboard → Gateway Auto-Refresh
+    </p>
+
+    <h3>✅ Features</h3>
+    <ul>
+      <li>SQL-based data cleaning and transformation</li>
+      <li>Automated ETL pipeline using Power Query</li>
+      <li>Star‑schema data modeling for optimized reporting</li>
+      <li>30+ DAX measures (OEE, Quality %, OTIF, MTTR, Efficiency)</li>
+      <li>Automated refresh using On‑Prem Gateway</li>
+      <li>Used daily by leadership teams for KPI review</li>
+    </ul>
+
+    <h3>✅ Technology Stack</h3>
+    <ul>
+      <li>SQL Server</li>
+      <li>Power BI</li>
+      <li>Power Query</li>
+      <li>DAX</li>
+      <li>SharePoint</li>
+      <li>Excel</li>
+    </ul>
+
+    <h3>✅ Dashboard Snapshots</h3>
+    <p>(Add your dashboard screenshots here)</p>
+
+    <h3>✅ Repository Structure</h3>
+    <pre>
+Manufacturing-KPI-Intelligence-System/
+    README.md
+    SQL/
+    PowerBI/
+    Images/
+    </pre>
+
+    <h3>✅ About This Project</h3>
+    <p>
+      This system was built as a plant-level unified KPI reporting platform and later upgraded
+      into an enterprise-ready BI model. It standardized KPIs across departments, reduced manual
+      reporting effort, and improved data quality.
+    </p>
+
   </div>
 </div>
 
+<!-- ✅ POPUP FOR PROJECT 2 -->
 <div id="modal2" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal2')">&times;</span>
-    <h2>Amazon Sales Dashboard</h2>
+
+    <h2>🛒 Amazon Sales Analytics & Forecasting</h2>
+
+    <h3>✅ Project Overview</h3>
     <p>
-An end‑to‑end analytics project using Python, SQL and Power BI. Includes data cleaning with Pandas,
-SQL-based data modeling (fact & dimension tables), DAX-driven dashboards, profitability insights,
-city-level analysis, anomaly detection and 30‑day demand forecasting using ARIMA/Prophet models.
-</p>
+      An end-to-end analytics project designed to analyze Amazon sales performance, profitability,
+      customer trends and forecast demand using Python, SQL & Power BI.
+    </p>
+
+    <h3>✅ Architecture</h3>
+    <p>
+      Python Cleaning → SQL Data Modeling → Power BI → DAX KPIs →
+      Forecasting (ARIMA/Prophet) → Dashboard Insights
+    </p>
+
+    <h3>✅ Features</h3>
+    <ul>
+      <li>Python-based data cleaning & preprocessing (Pandas)</li>
+      <li>Fact‑dimension SQL data model for reporting</li>
+      <li>Power BI dashboard with sales, category & profitability insights</li>
+      <li>30‑day demand forecasting (Prophet/ARIMA)</li>
+      <li>Anomaly detection using Z‑score & rolling metrics</li>
+      <li>Fully automated analytics pipeline</li>
+    </ul>
+
+    <h3>✅ Technology Stack</h3>
+    <ul>
+      <li>Python (Pandas, NumPy)</li>
+      <li>SQL Server / MySQL</li>
+      <li>Power BI</li>
+      <li>DAX</li>
+      <li>Matplotlib / Seaborn</li>
+    </ul>
+
+    <h3>✅ Dashboard Snapshots</h3>
+    <p>(Add your dashboard screenshots here)</p>
+
+    <h3>✅ Repository Structure</h3>
+    <pre>
+Amazon-Sales-Analytics-Forecasting/
+    README.md
+    SQL/
+    Python/
+    PowerBI/
+    Images/
+    </pre>
+
+    <h3>✅ About This Project</h3>
+    <p>
+      This project simulates real e-commerce analytics workflows by integrating Python, SQL & BI dashboards.
+      It demonstrates predictive analytics, SQL modeling, anomaly detection and KPI reporting for decision-making.
+    </p>
+
   </div>
 </div>
-
-
-<!-- ✅ EXPERIENCE -->
+  
+  
+  <!-- ✅ EXPERIENCE -->
 <section class="section" id="experience">
   <h2>Experience</h2>
 
