@@ -276,6 +276,52 @@ header img{
 .project-row div {
   flex: 1;
 }
+  /* ✅ Tool Badges */
+.badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 6px 14px;
+  margin: 6px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ✅ Screenshot Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.grid-item {
+  background: #eaeaea;
+  padding: 40px 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ✅ Modal Animations */
+.fade-modal {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(40px);}
+  to {transform: translateY(0);}
+}
 </style>
 </head>
 
@@ -384,11 +430,11 @@ high‑quality reporting solutions used across multiple departments.
 
   <!-- ✅ PROJECT 1 CARD -->
   <div class="project-row">
-    <img src="https://i.postimg.cc/8P7GFTGd/bi-dashboard.jpg" class="project-img">
+    https://i.postimg.cc/8P7GFTGd/bi-dashboard.jpg
 
     <div>
       <h3>📊 Manufacturing KPI Intelligence System</h3>
-      <p>End‑to‑end BI system with SQL ETL, Power Query, DAX & automated refresh for Production, Quality, SCM & Maintenance teams.</p>
+      <p>End‑to‑end BI platform integrating SQL ETL + Power Query + Power BI with enterprise KPIs.</p>
       <br>
       <button class="read-more" onclick="openModal('modal1')">Read More</button>
     </div>
@@ -396,11 +442,11 @@ high‑quality reporting solutions used across multiple departments.
 
   <!-- ✅ PROJECT 2 CARD -->
   <div class="project-row">
-    <img src="https://i.postimg.cc/B6G1tSmN/ecommerce-dashboard.jpg" class="project-img">
+    https://i.postimg.cc/B6G1tSmN/ecommerce-dashboard.jpg
 
     <div>
       <h3>🛒 Amazon Sales Analytics & Forecasting</h3>
-      <p>Python + SQL + Power BI workflow for trend analysis, profitability insights, anomaly detection & 30‑day forecasting.</p>
+      <p>Python + SQL + Power BI pipeline for forecasting & anomaly detection in eCommerce data.</p>
       <br>
       <button class="read-more" onclick="openModal('modal2')">Read More</button>
     </div>
@@ -408,123 +454,136 @@ high‑quality reporting solutions used across multiple departments.
 
 </section>
 
-<!-- ✅ POPUP FOR PROJECT 1 -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
+<!-- ✅ PROJECT 1 POPUP -->
+<div id="modal1" class="modal fade-modal">
+  <div class="modal-content slide-up">
     <span class="close" onclick="closeModal('modal1')">&times;</span>
 
-    <h2>📊 Manufacturing KPI Intelligence System</h2>
+    <h2 style="font-size:2rem; font-weight:700;">📊 Manufacturing KPI Intelligence System</h2>
 
     <h3>✅ Project Overview</h3>
     <p>
-      A complete end-to-end BI system that unifies multi-source manufacturing data into an
-      automated KPI reporting platform. This system provides leadership with real-time insights
-      across Production, Quality, SCM and Maintenance.
+      A complete end-to-end Business Intelligence solution integrating SQL Server, Power Query, and Power BI 
+      to automate KPI reporting across Production, Quality, SCM and Maintenance. The system provides real-time 
+      insights and eliminates manual reporting.
     </p>
 
     <h3>✅ Architecture</h3>
-    <p>
-      SharePoint + Excel + CSV → SQL Cleaning → Power Query ETL → Star Schema →
-      DAX KPIs → Power BI Dashboard → Gateway Auto-Refresh
+    <p style="line-height:1.9;">
+      <strong>SharePoint + Excel + CSV</strong> → 
+      <strong>SQL Cleaning & Validation</strong> → 
+      <strong>Power Query ETL</strong> → 
+      <strong>Star Schema</strong> → 
+      <strong>DAX KPIs</strong> → 
+      <strong>Power BI Dashboard</strong> → 
+      <strong>Gateway Auto‑Refresh</strong>
     </p>
 
-    <h3>✅ Features</h3>
+    <h3>✅ Key Features</h3>
     <ul>
-      <li>SQL-based data cleaning and transformation</li>
-      <li>Automated ETL pipeline using Power Query</li>
-      <li>Star‑schema data modeling for optimized reporting</li>
-      <li>30+ DAX measures (OEE, Quality %, OTIF, MTTR, Efficiency)</li>
-      <li>Automated refresh using On‑Prem Gateway</li>
-      <li>Used daily by leadership teams for KPI review</li>
+      <li>SQL-based cleaning, normalization, error handling</li>
+      <li>Power Query ETL automation with scheduled refresh</li>
+      <li>Optimized star‑schema for high performance</li>
+      <li>30+ DAX KPIs (OEE, OTIF, Rejection %, MTTR, Efficiency)</li>
+      <li>Interactive dashboards with drill-down & trend visuals</li>
     </ul>
 
     <h3>✅ Technology Stack</h3>
+    <div class="badge-row">
+      <span class="badge">SQL Server</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Power Query</span>
+      <span class="badge">DAX</span>
+      <span class="badge">SharePoint</span>
+    </div>
+
+    <h3>✅ Screenshot Gallery</h3>
+    <div class="grid">
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+    </div>
+
+    <h3>✅ Key Outcomes / Impact</h3>
     <ul>
-      <li>SQL Server</li>
-      <li>Power BI</li>
-      <li>Power Query</li>
-      <li>DAX</li>
-      <li>SharePoint</li>
-      <li>Excel</li>
+      <li>Reduced manual reporting workload by <strong>12+ hours/week</strong></li>
+      <li>Improved KPI visibility & decision-making speed</li>
+      <li>Enabled early anomaly detection in operations</li>
+      <li>Standardized KPI definitions across departments</li>
     </ul>
-
-    <h3>✅ Dashboard Snapshots</h3>
-    <p>(Add your dashboard screenshots here)</p>
-
-    <h3>✅ Repository Structure</h3>
-    <pre>
-Manufacturing-KPI-Intelligence-System/
-    README.md
-    SQL/
-    PowerBI/
-    Images/
-    </pre>
 
     <h3>✅ About This Project</h3>
     <p>
-      This system was built as a plant-level unified KPI reporting platform and later upgraded
-      into an enterprise-ready BI model. It standardized KPIs across departments, reduced manual
-      reporting effort, and improved data quality.
+      This BI system was designed as a scalable enterprise KPI platform to support leadership reviews and 
+      real-time operational decisions. It demonstrates strong skills in SQL, ETL design, modeling, DAX, BI 
+      development and automation.
     </p>
 
   </div>
 </div>
 
-<!-- ✅ POPUP FOR PROJECT 2 -->
-<div id="modal2" class="modal">
-  <div class="modal-content">
+<!-- ✅ PROJECT 2 POPUP -->
+<div id="modal2" class="modal fade-modal">
+  <div class="modal-content slide-up">
     <span class="close" onclick="closeModal('modal2')">&times;</span>
 
-    <h2>🛒 Amazon Sales Analytics & Forecasting</h2>
+    <h2 style="font-size:2rem; font-weight:700;">🛒 Amazon Sales Analytics & Forecasting</h2>
 
     <h3>✅ Project Overview</h3>
     <p>
-      An end-to-end analytics project designed to analyze Amazon sales performance, profitability,
-      customer trends and forecast demand using Python, SQL & Power BI.
+      A complete analytics pipeline using Python, SQL and Power BI to analyze Amazon eCommerce sales, 
+      customer behavior, profitability and future demand trends.
     </p>
 
     <h3>✅ Architecture</h3>
-    <p>
-      Python Cleaning → SQL Data Modeling → Power BI → DAX KPIs →
-      Forecasting (ARIMA/Prophet) → Dashboard Insights
+    <p style="line-height:1.9;">
+      <strong>Python Cleaning</strong> →
+      <strong>SQL Fact‑Dimension Modeling</strong> →
+      <strong>Power BI Data Model</strong> →
+      <strong>DAX KPIs</strong> →
+      <strong>ARIMA/Prophet Forecasting</strong> →
+      <strong>Anomaly Detection</strong>
     </p>
 
-    <h3>✅ Features</h3>
+    <h3>✅ Key Features</h3>
     <ul>
-      <li>Python-based data cleaning & preprocessing (Pandas)</li>
-      <li>Fact‑dimension SQL data model for reporting</li>
-      <li>Power BI dashboard with sales, category & profitability insights</li>
-      <li>30‑day demand forecasting (Prophet/ARIMA)</li>
-      <li>Anomaly detection using Z‑score & rolling metrics</li>
-      <li>Fully automated analytics pipeline</li>
+      <li>Python-based cleaning and preprocessing using Pandas</li>
+      <li>Time-series forecasting for 30-day demand (Prophet/ARIMA)</li>
+      <li>Anomaly detection with Z‑score + rolling deviation</li>
+      <li>Category, region, customer & profitability insights</li>
+      <li>Power BI dashboards with interactive KPIs</li>
     </ul>
 
     <h3>✅ Technology Stack</h3>
+    <div class="badge-row">
+      <span class="badge">Python</span>
+      <span class="badge">Pandas</span>
+      <span class="badge">NumPy</span>
+      <span class="badge">SQL</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Matplotlib</span>
+    </div>
+
+    <h3>✅ Screenshot Gallery</h3>
+    <div class="grid">
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+      <div class="grid-item">Add Image</div>
+    </div>
+
+    <h3>✅ Key Outcomes / Impact</h3>
     <ul>
-      <li>Python (Pandas, NumPy)</li>
-      <li>SQL Server / MySQL</li>
-      <li>Power BI</li>
-      <li>DAX</li>
-      <li>Matplotlib / Seaborn</li>
+      <li>Improved demand prediction accuracy using ML models</li>
+      <li>Identified product anomalies & unusual sales behavior</li>
+      <li>Enhanced decision-making for marketing & inventory planning</li>
+      <li>Delivered insights on customer, category & profitability trends</li>
     </ul>
-
-    <h3>✅ Dashboard Snapshots</h3>
-    <p>(Add your dashboard screenshots here)</p>
-
-    <h3>✅ Repository Structure</h3>
-    <pre>
-Amazon-Sales-Analytics-Forecasting/
-    README.md
-    SQL/
-    Python/
-    PowerBI/
-    Images/
-    </pre>
 
     <h3>✅ About This Project</h3>
     <p>
-      This project simulates real e-commerce analytics workflows by integrating Python, SQL & BI dashboards.
-      It demonstrates predictive analytics, SQL modeling, anomaly detection and KPI reporting for decision-making.
+      This project simulates a real eCommerce analytics use case and showcases advanced skills in Python 
+      analytics, SQL modeling, forecasting, anomaly detection and BI storytelling. Suitable for Data, BI, 
+      Product and eCommerce Analyst roles.
     </p>
 
   </div>
