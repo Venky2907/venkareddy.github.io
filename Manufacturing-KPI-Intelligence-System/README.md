@@ -1,6 +1,6 @@
 ### 📊 Manufacturing KPI Intelligence System
 
-**Enterprise-grade manufacturing KPI platform using SQL Server, Power BI, Power Query, DAX, and SharePoint with fully automated ETL and 30+ KPIs.**
+SQL Server · Power BI · DAX · Power Query · SharePoint 
 
 ***
 
