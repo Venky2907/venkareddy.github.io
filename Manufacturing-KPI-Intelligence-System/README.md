@@ -1,55 +1,116 @@
-# 🏭 Manufacturing KPI Intelligence System  
+### 📊 Manufacturing KPI Intelligence System
 
-**SQL • Power BI • Power Query ETL • Automation**
+**Enterprise-grade manufacturing KPI platform using SQL Server, Power BI, Power Query, DAX, and SharePoint with fully automated ETL and 30+ KPIs.**
 
----
+***
 
-## ✅ Project Overview  
-A complete end-to-end BI system that unifies multi-source manufacturing data into an automated KPI reporting platform.  
-This system provides leadership with real-time insights across Production, Quality, SCM, and Maintenance.
+## 🔍 Project Overview
 
----
+This project demonstrates the design and implementation of a **plant-level KPI intelligence system** that integrates multiple enterprise data sources into a **single source of truth** for manufacturing performance reporting.
 
-## ✅ Architecture  
-SharePoint + Excel + CSV → SQL Cleaning → Power Query ETL → Star Schema → DAX KPIs → Power BI Dashboard → Gateway Auto-Refresh
+The solution supports **Production, Quality, Supply Chain, and Maintenance** analytics with fully automated refresh and interactive drill-through dashboards.
 
----
+***
 
-## ✅ Features  
-- SQL-based data validation and transformation  
-- Automated ETL pipeline using Power Query  
-- Star-schema data modeling for optimized reporting  
-- 30+ DAX measures (OEE, Quality %, OTIF, MTTR, Efficiency)  
-- Automated refresh using On-Premises Gateway  
-- Used daily by leadership teams for KPI review  
+## 🛠️ Tech Stack
 
----
+*   **SQL Server** – Central data warehouse & star schema modeling
+*   **Power BI** – KPI dashboards & analytics
+*   **Power Query** – ETL & data transformation
+*   **DAX** – 30+ business KPIs & time intelligence
+*   **SharePoint & Excel** – Source systems
+*   **Power BI Gateway** – Automated scheduled refresh
 
-## ✅ Technology Stack  
-- SQL  
-- Power BI  
-- Power Query  
-- DAX  
-- SharePoint  
-- Excel  
+***
 
----
+## 🏗️ Architecture
 
-## ✅ Dashboard Snapshots  
-*(Screenshots will be added soon)*  
+    SharePoint / Excel
+            ↓
+       Power Query (ETL)
+            ↓
+         SQL Server
+       (Star Schema)
+            ↓
+          Power BI
+       (DAX Measures)
+            ↓
+     Automated Refresh
+     (Power BI Gateway)
 
----
+***
 
-## ✅ Repository Structure  
-Manufacturing-KPI-Intelligence-System/
-│── README.md
-│── SQL/
-│── PowerBI/
-│── Images/
+## 📈 Key KPIs Implemented
 
+### 🔹 Production
 
----
+*   Overall Equipment Effectiveness (OEE)
+*   Plan vs Actual Production
+*   Downtime Analysis
+*   Throughput & Yield
 
-## ✅ About This Project  
-This system was built as a plant-level unified KPI reporting platform and later upgraded into an enterprise-ready BI model.  
-The solution standardized KPIs across departments, reduced manual reporting effort, and improved dat
+### 🔹 Quality
+
+*   First Pass Yield (FPY)
+*   Rejection Rate
+*   Defect Trend Analysis
+
+### 🔹 Supply Chain
+
+*   On-Time Delivery (OTD)
+*   Inventory Turnover
+*   Material Shortage Analysis
+
+### 🔹 Maintenance
+
+*   Mean Time Between Failures (MTBF)
+*   Mean Time To Repair (MTTR)
+*   Preventive vs Breakdown Maintenance
+
+***
+
+## 🚀 Key Achievements
+
+*   ✅ Integrated **SQL Server, SharePoint, and Excel** into a unified star-schema model
+*   ✅ Built **30+ DAX measures** with drill-through & trend analysis
+*   ✅ Implemented **Power BI Gateway** for fully automated refresh
+*   ✅ Reduced **manual reporting by 12+ hours/week**
+*   ✅ Enabled **real-time KPI visibility** for plant-level decision-making
+
+***
+
+## 📂 Repository Structure
+
+    manufacturing-kpi-intelligence-system/
+    │
+    ├── sql/
+    │   ├── star_schema.sql
+    │   ├── fact_tables.sql
+    │   └── dimension_tables.sql
+    │
+    ├── powerbi/
+    │   └── manufacturing_kpi_dashboard.pbix
+    │
+    ├── dax/
+    │   └── kpi_measures.md
+    │
+    ├── docs/
+    │   └── architecture_diagram.png
+    │
+    ├── screenshots/
+    │   └── dashboard_preview.png
+    │
+    └── README.md
+
+***
+
+## 📸 Dashboard Preview
+
+*(Add Power BI screenshots here – blurred or sample data is fine)*
+
+***
+
+## 🔐 Data Disclaimer
+
+> This project uses **synthetic / masked data**.  
+> No confidential or proprietary company data is included.
