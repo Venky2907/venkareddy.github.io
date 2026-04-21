@@ -1,116 +1,167 @@
-### 📊 Manufacturing KPI Intelligence System
+# 🏭 Manufacturing KPI Intelligence System
 
-SQL Server · Power BI · DAX · Power Query · SharePoint 
-
-***
-
-## 🔍 Project Overview
-
-This project demonstrates the design and implementation of a **plant-level KPI intelligence system** that integrates multiple enterprise data sources into a **single source of truth** for manufacturing performance reporting.
-
-The solution supports **Production, Quality, Supply Chain, and Maintenance** analytics with fully automated refresh and interactive drill-through dashboards.
+**SQL • Power BI • Power Query ETL • DAX • Automation**
 
 ***
 
-## 🛠️ Tech Stack
+## ✅ Project Overview
 
-*   **SQL Server** – Central data warehouse & star schema modeling
-*   **Power BI** – KPI dashboards & analytics
-*   **Power Query** – ETL & data transformation
-*   **DAX** – 30+ business KPIs & time intelligence
+An **enterprise-ready, end-to-end Manufacturing Intelligence Platform** that unifies **Safety, Quality, Energy, Water, Production, and Supply Chain** data into a single automated KPI reporting system.
+
+This platform delivers **daily, plant-level visibility** to leadership teams, replacing manual reports with a **real-time, standardized KPI framework**.
+
+***
+
+## ✅ Business Domains Covered
+
+*   🦺 Safety Excellence
+*   ✅ Quality Performance
+*   ⚡ Energy Management
+*   💧 Water Management
+*   🏭 Production & Maintenance
+*   🚚 Supply Chain & Sales
+
+***
+
+## ✅ Architecture
+
+**SharePoint + Excel + CSV**  
+→ **SQL Server (Cleaning & Validation)**  
+→ **Power Query ETL**  
+→ **Star Schema Data Model**  
+→ **DAX KPI Layer**  
+→ **Power BI Dashboards**  
+→ **On‑Premises Gateway (Auto Refresh)**
+
+***
+
+## ✅ Key Features
+
+*   SQL-based data validation & transformation
+*   Automated ETL using Power Query
+*   Optimized **Star Schema** for high-performance reporting
+*   30+ standardized DAX KPIs across operations
+*   Fully automated refresh using Power BI Gateway
+*   Used by leadership teams for **daily KPI review & decision-making**
+
+***
+
+## ✅ KPI Coverage (Detailed)
+
+### 🦺 Safety KPIs
+
+*   Department-wise incident tracking
+*   HMS identified vs closed (by department)
+*   Recordable Incident Rate (RIR)
+*   Safety trend analysis across time
+
+***
+
+### ✅ Quality KPIs
+
+*   Internal complaints
+*   External complaints
+*   Rejection rate
+*   Internal NCs (Non-Conformities)
+*   Internal Quality Reports
+*   Product-wise defect trend analysis
+
+***
+
+### ⚡ Energy Management KPIs
+
+*   Renewable energy generation
+*   Total energy consumption
+*   EB (Electric Board) usage
+*   DG (Diesel Generator) usage
+*   EB vs DG consumption ratio
+*   Energy consumption by process:
+    *   Palletizing
+    *   Extrusion
+    *   Overall plant (kWh)
+
+***
+
+### 🚚 Supply Chain & Sales KPIs
+
+*   Inventory days
+*   OTIF (On-Time In-Full)
+*   Sales value (₹ Crores)
+*   Sales volume (MT)
+*   Dispatch quantity (MT) – product-wise
+
+***
+
+### 🏭 Production & Maintenance KPIs
+
+*   Daily production
+*   Rejection quantity
+*   Overall Equipment Effectiveness (OEE)
+*   Asset Utilization (AU)
+*   MTBF (Mean Time Between Failures)
+*   MTTR (Mean Time To Repair)
+*   Downtime analysis
+*   Rejection analysis
+*   Throughput & Yield
+
+***
+
+### 💧 Water Management KPIs
+
+*   End-to-end water flow tracking
+*   Source-wise water intake
+*   Department-wise consumption
+*   Process losses & rejection
+*   Visual water flow diagram for sustainability reporting
+
+***
+
+## ✅ Technology Stack
+
+*   **SQL Server** – Data cleaning, validation, star schema
+*   **Power BI** – Interactive dashboards & drill-down analytics
+*   **Power Query** – Automated ETL pipelines
+*   **DAX** – KPI calculations & time intelligence
 *   **SharePoint & Excel** – Source systems
 *   **Power BI Gateway** – Automated scheduled refresh
 
 ***
 
-## 🏗️ Architecture
+## ✅ Repository Structure
 
-    SharePoint / Excel
-            ↓
-       Power Query (ETL)
-            ↓
-         SQL Server
-       (Star Schema)
-            ↓
-          Power BI
-       (DAX Measures)
-            ↓
-     Automated Refresh
-     (Power BI Gateway)
-
-***
-
-## 📈 Key KPIs Implemented
-
-### 🔹 Production
-
-*   Overall Equipment Effectiveness (OEE)
-*   Plan vs Actual Production
-*   Downtime Analysis
-*   Throughput & Yield
-
-### 🔹 Quality
-
-*   First Pass Yield (FPY)
-*   Rejection Rate
-*   Defect Trend Analysis
-
-### 🔹 Supply Chain
-
-*   On-Time Delivery (OTD)
-*   Inventory Turnover
-*   Material Shortage Analysis
-
-### 🔹 Maintenance
-
-*   Mean Time Between Failures (MTBF)
-*   Mean Time To Repair (MTTR)
-*   Preventive vs Breakdown Maintenance
-
-***
-
-## 🚀 Key Achievements
-
-*   ✅ Integrated **SQL Server, SharePoint, and Excel** into a unified star-schema model
-*   ✅ Built **30+ DAX measures** with drill-through & trend analysis
-*   ✅ Implemented **Power BI Gateway** for fully automated refresh
-*   ✅ Reduced **manual reporting by 12+ hours/week**
-*   ✅ Enabled **real-time KPI visibility** for plant-level decision-making
-
-***
-
-## 📂 Repository Structure
-
-    manufacturing-kpi-intelligence-system/
+    Manufacturing-KPI-Intelligence-System/
     │
-    ├── sql/
-    │   ├── star_schema.sql
-    │   ├── fact_tables.sql
-    │   └── dimension_tables.sql
+    ├── README.md
+    ├── SQL/
+    │   └── kpi_queries.sql
     │
-    ├── powerbi/
-    │   └── manufacturing_kpi_dashboard.pbix
+    ├── PowerBI/
+    │   └── Manufacturing_KPI_Dashboard.pbix
     │
-    ├── dax/
+    ├── DAX/
     │   └── kpi_measures.md
     │
-    ├── docs/
-    │   └── architecture_diagram.png
-    │
-    ├── screenshots/
-    │   └── dashboard_preview.png
-    │
-    └── README.md
+    ├── Images/
+    │   └── dashboard_snapshots.png
 
 ***
 
-## 📸 Dashboard Preview
+## ✅ Dashboard Snapshots
 
-*(Add Power BI screenshots here – blurred or sample data is fine)*
+📌 *Screenshots will be added soon (masked / sample data).*
+
+***
+
+## ✅ About This Project
+
+This solution was initially developed as a **plant-level KPI reporting system** and later enhanced into an **enterprise-grade BI platform**.
+
+The system standardized KPIs across departments, eliminated manual reporting, and enabled **data-driven operational and sustainability decisions**.
 
 ***
 
 ## 🔐 Data Disclaimer
 
-> This project uses **synthetic / masked data**.  
-> No confidential or proprietary company data is included.
+> This repository uses **masked / synthetic data**.  
+> No confidential or proprietary company information is included.
+
