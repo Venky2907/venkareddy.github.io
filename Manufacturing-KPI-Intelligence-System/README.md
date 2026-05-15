@@ -1,4 +1,4 @@
-# 🏭 Manufacturing KPI Intelligence System
+# 🏭 Enterprise Manufacturing KPI Intelligence System
 
 **SQL • Power BI • Power Query ETL • DAX • Automation**
 
@@ -6,9 +6,11 @@
 
 ## ✅ Project Overview
 
-An **enterprise-ready, end-to-end Manufacturing Intelligence Platform** that unifies **Safety, Quality, Energy, Water, Production, and Supply Chain** data into a single automated KPI reporting system.
 
-This platform delivers **daily, plant-level visibility** to leadership teams, replacing manual reports with a **real-time, standardized KPI framework**.
+An enterprise-grade, end-to-end Manufacturing Intelligence Platform that consolidates Safety, Quality, Energy, Water, Production, Maintenance, and Supply Chain data into a single automated KPI reporting system.
+
+The solution enables real-time, plant-level performance visibility for leadership teams, eliminating manual reporting and establishing a standardized, data-driven KPI framework across operations.
+
 
 ***
 
@@ -118,12 +120,13 @@ This platform delivers **daily, plant-level visibility** to leadership teams, re
 
 ## ✅ Technology Stack
 
-*   **SQL Server** – Data cleaning, validation, star schema
-*   **Power BI** – Interactive dashboards & drill-down analytics
-*   **Power Query** – Automated ETL pipelines
-*   **DAX** – KPI calculations & time intelligence
-*   **SharePoint & Excel** – Source systems
-*   **Power BI Gateway** – Automated scheduled refresh
+*   SQL Server – Data extraction, cleaning, validation, and transformation
+*   Python (Pandas, NumPy) – Data preprocessing and validation for analytics
+*   Power BI – Interactive dashboards & drill-down analytics
+*   Power Query – Automated ETL pipelines
+*   DAX – KPI calculations & time intelligence
+*   SharePoint & Excel – Source systems
+*   Power BI Gateway – Automated scheduled refreshh
 
 ***
 
@@ -151,14 +154,13 @@ This platform delivers **daily, plant-level visibility** to leadership teams, re
 📌 *Screenshots will be added soon (masked / sample data).*
 
 ***
+## ✅ Business Impact
 
-## ✅ About This Project
-
-This solution was initially developed as a **plant-level KPI reporting system** and later enhanced into an **enterprise-grade BI platform**.
-
-The system standardized KPIs across departments, eliminated manual reporting, and enabled **data-driven operational and sustainability decisions**.
-
-***
+- Reduced manual reporting effort by ~12+ hours per week through automation
+- Enabled real-time KPI visibility for faster decision-making at leadership level
+- Standardized KPI tracking across multiple departments
+- Improved identification of operational deviations and performance gaps
+``
 
 ## 🔐 Data Disclaimer
 
