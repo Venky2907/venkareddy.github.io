@@ -117,15 +117,17 @@ header img{
 }
 
 /* PROJECT ROW */
-.project-row{
-  display:flex;
-  gap:20px;
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
-  box-shadow:0 5px 18px rgba(0,0,0,0.08);
-  transition:0.3s;
+.project-row {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  align-items: flex-start;  /* ✅ FIX */
+}
+``
 }
 .project-row:hover{
   transform:translateY(-5px);
@@ -504,7 +506,7 @@ I focus on roles that involve analytics engineering, BI development, and data-dr
 
     <br><br>
 
-    <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:10px;">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
   <button class="read-more" onclick="openModal('modal2')">Read More</button>
 
   <a href="#" target="_blank">
