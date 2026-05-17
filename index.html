@@ -117,7 +117,7 @@ header img{
 }
 
 /* PROJECT ROW */
-.project-row {
+..project-row {
   display: flex;
   gap: 20px;
   background: white;
@@ -125,22 +125,28 @@ header img{
   border-radius: 12px;
   margin-bottom: 30px;
   box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-  align-items: flex-start;  /* ✅ FIX */
+  align-items: center;
 }
-``
-}
-.project-row:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
+
 .project-img {
   width: 200px;
   height: 130px;
   border-radius: 12px;
   object-fit: cover;
-  background: #f0f0f0;
+  flex-shrink: 0;
+  display:block;
 }
 
+.project-content {
+  flex: 1;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
 /* READ MORE BUTTON */
 .read-more{
   background:var(--primary);
