@@ -372,6 +372,38 @@ header img{
   from {transform:translateY(40px);}
   to {transform:translateY(0);}
 }
+  /* ✅ PREMIUM PROJECT UI */
+.project-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.impact {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+body.dark .impact {
+  color: #bbb;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* Hover effect */
+.project-row {
+  transition: 0.3s ease;
+}
+
+.project-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
 </style>
 </head>
 
@@ -473,56 +505,80 @@ I focus on roles that involve analytics engineering, BI development, and data-dr
 <section class="section" id="projects">
   <h2>Projects</h2>
 
-  <!-- ✅ PROJECT 1 CARD -->
-  <div class="project-row">
-    <img src="https://i.postimg.cc/8P7GFTGd/bi-dashboard.jpg" class="project-img">
-
-    <div>
-      <h3>📊 Enterprise Manufacturing KPI Intelligence System</h3>
-      <p>Enterprise-level KPI intelligence system integrating SAP, IoT, and Excel data with automated ETL, star schema modeling, and 50+ DAX measures for real-time operational analytics.</p>
-  <span class="badge">SQL</span>
-  <span class="badge">Power BI</span>
-  <span class="badge">Power Query</span>
-  <span class="badge">DAX</span>
-</div>
-      <br>
-      <button class="read-more" onclick="openModal('modal1')">Read More</button>
-      <a href="https://github.com/venky2907/venkareddy.github.io/tree/main/Manufacturing-KPI-Intelligence-System" target="_blank">
-  <button class="read-more">🔗 Code</button>
-</a>
-    </div>
-  </div>
-
-  <!-- ✅ PROJECT 2 CARD -->
+  <!-- ✅ PROJECT 1 -->
 <div class="project-row">
-  <img src="https://i.postimg.cc/B6G1tSmN/ecommerce-dashboard.jpg" class="project-img">
 
-  <div>
-    <h3>📦 Supply Chain & Inventory Optimization Analytics</h3>
+  <img src="https://i.postimg.cc/8P7GFTGd/bi-dashboard.jpg" class="project-img">
 
-    <p>
-      End-to-end analytics system using SQL, Python, and Power BI to analyze inventory,
-      demand trends, and supplier performance for operational optimization.
+  <div class="project-content">
+
+    <h3>📊 Enterprise Manufacturing KPI Intelligence System</h3>
+
+    <p class="impact">
+      🚀 Reduced manual reporting by <strong>12+ hrs/week</strong> |
+      📈 50+ KPIs automated |
+      ⚡ Real-time decision system
     </p>
 
-    <span class="badge">SQL</span>
-    <span class="badge">Python</span>
-    <span class="badge">Power BI</span>
-    <span class="badge">Pandas</span>
+    <p>
+      Built enterprise BI system integrating SAP, IoT, Excel using SQL + Power BI.
+    </p>
 
-    <br><br>
+    <div>
+      <span class="badge">SQL</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">DAX</span>
+      <span class="badge">Power Query</span>
+    </div>
 
-    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:10px;">
-  <button class="read-more" onclick="openModal('modal2')">Read More</button>
+    <div class="project-actions">
+      <button class="read-more" onclick="openModal('modal1')">Read More</button>
 
-  <a href="https://github.com/venky2907/venkareddy.github.io/tree/main/Supply-Chain-Analytics" target="_blank">
-  <button class="read-more">🔗 Code</button>
-</a>
+      <a href="https://github.com/venky2907/venkareddy.github.io/tree/main/Manufacturing-KPI-Intelligence-System" target="_blank">
+        <button class="read-more">🔗 Code</button>
+      </a>
+    </div>
+
+  </div>
 </div>
-</div>
-</div>
 
 
+<!-- ✅ PROJECT 2 -->
+<div class="project-row">
+
+  <img src="https://i.postimg.cc/B6G1tSmN/ecommerce-dashboard.jpg" class="project-img">
+
+  <div class="project-content">
+
+    <h3>📦 Supply Chain & Inventory Optimization Analytics</h3>
+
+    <p class="impact">
+      📦 Reduced stock risks |
+      📊 Demand trend insights |
+      🔍 Supplier performance tracking
+    </p>
+
+    <p>
+      Built analytics system using SQL, Python, and Power BI.
+    </p>
+
+    <div>
+      <span class="badge">SQL</span>
+      <span class="badge">Python</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Pandas</span>
+    </div>
+
+    <div class="project-actions">
+      <button class="read-more" onclick="openModal('modal2')">Read More</button>
+
+      <a href="https://github.com/venky2907/venkareddy.github.io/tree/main/Supply-Chain-Analytics" target="_blank">
+        <button class="read-more">🔗 Code</button>
+      </a>
+    </div>
+
+  </div>
+</div>
 </section>
 
 <!-- ✅ PROJECT 1 POPUP – UPDATED TEXT VERSION -->
